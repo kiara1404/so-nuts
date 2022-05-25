@@ -1,0 +1,26 @@
+{
+  "name": "so-nuts",
+  "version": "1.0.0",
+  "description": "![So Nuts](https://www.hva.nl/binaries/threecolumnlandscape/content/gallery/subsites/urban-vitality/nieuws/go-nuts/gepensioneerde-man-etend-op-bank.jpeg)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiara1404/so-nuts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kiara1404/so-nuts/issues"
+  },
+  "homepage": "https://github.com/kiara1404/so-nuts#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
+  }
+}

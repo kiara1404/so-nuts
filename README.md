@@ -3,26 +3,26 @@
 ![So Nuts](https://www.hva.nl/binaries/threecolumnlandscape/content/gallery/subsites/urban-vitality/nieuws/go-nuts/gepensioneerde-man-etend-op-bank.jpeg)
 
 ## Inhoudsopgave
-  * [Beschrijving](#beschrijving)
+  * [Debrief](#debrief)
   * [Opdrachtgever](#opdrachtgever)
   * [Design challenge](#design-challege)
   * [Data](#data)
-  * [Planning](#planning)
   * [Licentie](#licentie)
 
-## Beschrijving
-Wanneer mensen met pensioen gaan verandert er veel, ook hun eet- en beweeggewoontes. Vaak worden mensen na hun pensioen zwaarder. Dit extra gewicht is met name vetmassa, terwijl de spiermassa juist afneemt. 
-eHealth (zoals applicaties en wearables) is een veel belovende methode om een gepersonaliseerde en aantrekkelijke leefstijlinterventie aan te bieden aan een grote groep mensen, terwijl de kosten laag blijven. Momenteel ontbreekt het aan effectieve, duurzame eet-en beweeginterventies voor mensen die met pensioen gaan.
-Het project SO-NUTS richt zich op het ontwikkelen van een digitale tool voor mensen die met pensioen gaan. Het doel van deze tool: het stimuleren van een duurzaam beweeg- en voedingspatroon. 
-Bron: [https://www.hva.nl/urban-vitality/gedeelde-content/projecten/voeding-en-beweging/so-nuts.html?origin=p32fLdrhRlKJRVYhxeXQ5w](https://www.hva.nl/urban-vitality/gedeelde-content/projecten/voeding-en-beweging/so-nuts.html?origin=p32fLdrhRlKJRVYhxeXQ5w)
+## Debrief
+#### Aanleiding
+Ouder worden heeft gevolgen op mensen hun leefstijl. Onder andere hun eet- en beweeggewoonten veranderen. Soms kan dit betekenen dat mensen extra gewicht krijgen, met name in vetmassa, terwijl de spiermassa juist afneemt. Er zijn al oplossingen om mensen op een aantrekkelijke, gepersonaliseerde en goedkope manier hulp te bieden. Toch ontbreekt het aan effectieve, duurzame eet- en beweeginterventies gericht op onze specifieke doelgroep: 55-plussers.
 
-## Opdrachtgever
-SO-NUTS is een Europese samenwerking tussen experts op het gebied van voeding, beweging, eHealth, sarcopenie, obesitas en sarcopene obesitas. Met SO-NUTS leveren onderzoekers een belangrijke bijdrage aan (internationale) kennis over het voorkomen van sarcopene obesitas bij een steeds groter wordende groep ouderen.
-Binnen de HvA wordt SO-NUTS uitgevoerd in de onderzoeksgroep ‘Mensen in Beweging’. Mensen in Beweging is een samenwerking tussen drie HvA-faculteiten: Gezondheid (FG), Bewegen Sport en Voeding (FBSV) en Digitale Media en Creatieve Industrie (FDMCI).
-Bron: [https://www.hva.nl/urban-vitality/gedeelde-content/projecten/voeding-en-beweging/so-nuts.html](https://www.hva.nl/urban-vitality/gedeelde-content/projecten/voeding-en-beweging/so-nuts.html)
+#### Opdrachtomschrijving
+Bij deze opdracht is het de bedoeling dat er een web applicatie wordt ontwikkeld waarbij 55-plussers gestimuleerd worden om een duurzaam beweeg- en voedingspatroon aan te houden. De persoon in kwestie moet op de app drie vragenlijsten kunnen invullen zodat er op basis van de antwoorden twee lijsten met aanbevelingen kunnen worden gedaan. Deze aanbevelingen zijn gericht op het verbeteren van het voedingspatroon en op het verbeteren van je actieve levensstijl. Vervolgens moet de app de gebruiker laten kiezen uit drie onderwerpen. Hier moet de gebruiker een planning voor kunnen maken, zodat de app tips aan de gebruiker tips kan geven over het aanleren van nieuwe gewoontes in zijn/haar levensstijl.
 
-## Design challenge
-Hoe kan een digitale tool ervoor zorgen dat gepensioneerden gestimuleerd worden om een duurzaam beweeg- en voedingspatroon aan te houden zodat sarcopenie, obesitas en sarcopene obesitas voorkomen kunnen worden?
+#### Achtergrondinformatie
+SO-NUTS is een Europees samenwerkingsverband van experts op het gebied van voeding, beweging, eHealth, sarcopenie, obesitas en sarcopenie obesitas. Met SO-NUTS leveren onderzoekers een belangrijke bijdrage aan de (internationale) kennis over de preventie van sarcopene obesitas bij groeiende groepen ouderen. SO-NUTS wordt uitgevoerd door de onderzoeksgroep "People in Motion" binnen de HvA. People in Movement is een samenwerking tussen de drie HvA-opleidingen (FG), Bewegen, Sport en Voeding (FBSV), Digitale Media en de Creatieve Industrie (FDMCI).
+
+#### Doelstelling
+Wanneer mensen ouder worden gaan verandert er veel in hun leven. Zo ook het eetpatroon en de dagelijkse beweging kan erg veranderen. Zo kan iemand die een actieve baan had, opeens veel minder gaan bewegen waardoor de vetmassa kan toenemen en de spiermassa afneemt. Dit allemaal is natuurlijk niet bevorderlijk voor de gezondheid van de mens. Er is en grote hoeveelheid aan applicaties en wearables die mensen kunnen stimuleren om meer te gaan bewegen en bewuster te gaan eten. Dit wordt ook wel eHealth genoemd.
+
+Helaas ontbreekt het aan effectieve, duurzame eet-en beweeginterventies voor mensen die ouder worden. Het is aan ons om ervoor te zorgen dat er een digitale tool komt die 55-plussers stimuleren om meer te bewegen en een meer bewust voedingspatroon in hun leven te implementeren zodat sarcopenie, obesitas en sarcopene obesitas voorkomen kunnen worden.
 
 ### User stories
 1) Als gebruiker, moet ik drie vragenlijsten invullen als intake, zodat de antwoorden hiervoor gebruikt kunnen worden voor een aanbeveling (later in het proces).
@@ -39,9 +39,6 @@ Hoe kan een digitale tool ervoor zorgen dat gepensioneerden gestimuleerd worden 
 
 ## Data
 Relevante data is via een API te ontsluiten.
-
-## Planning
-In de eerste week van de meesterproef is een briefing met de opdrachtgever en begeleiders. Wekelijks wordt aan de opdrachtgever een prototype gedemonstreerd en de volgende stappen besproken. Tussentijds kunnen via Teams vragen gesteld worden.
 
 ## Licentie
 
