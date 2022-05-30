@@ -14,9 +14,9 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('pages/index')
 })
 
 app.listen(port, () =>
-    console.log(`Server is running!`),
+    console.log(`Server is running succesfully👋!`),
 );
