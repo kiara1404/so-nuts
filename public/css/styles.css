@@ -1,7 +1,9 @@
 :root {
-  --main-pink: #9F86BE;
+  --main-purple: #9f86be;
   --main-green: #51A34B;
-  --dark-grey: #282828
+  --lighter-green: #91CFAD;
+  --dark-grey: #282828;
+
 }
 
 * {
@@ -12,54 +14,42 @@
 }
 body{
     font-size: 18px;
-    background-image: url('https://media.istockphoto.com/photos/food-with-high-content-of-omega3-fats-picture-id1301412050?b=1&k=20&m=1301412050&s=170667a&w=0&h=nViB9ZIwyVRLPD5s123i48XNq_MNUvdBtX3IzAHnqec=');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-   object-position: right top;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: -11;
-    backdrop-filter: blur(3px);
-
-    
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+    background-color: #3d3d3d;
+  
 }
 
+i {
+    color: #fff;
+    margin: 2rem;
+}
 #overlay{
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.604);
-
-    ;
+    margin: 5rem auto 0;
 }
-
-
-@media only screen and (max-width: 400px){
-    nav{
+    .headline{
         display: block;
         width: 350px;
         margin: 12rem auto 2rem;
         z-index: 1;
     }
     h1{
-        color: #fff;
-        font-family: 'Raleway', sans-serif;
         font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 1.3px;
         font-size: 4.5rem;
         width: 340px;
         text-align: center;
+        color: #fff;
     }
+
 
     p{
         color: #fff;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        width: 350px;
+        width: 320px;
         letter-spacing: 0.8px;
         margin-left: 10px;
+        font-weight: 400;
     }
 
     section > a:first-child {
@@ -68,26 +58,188 @@ body{
         padding: 10px 20px;
         color: #fff;
         font-size: 1.5em;
-        font-family: 'Raleway', sans-serif;
         text-decoration: none;
         display: block;
         width: 300px;
         margin: 3rem auto 0;
         text-align: center;
-    }
-        section > a:last-child {
-        border: 2px solid var(--main-green);
-        border-radius: 15px;
-        padding: 10px 20px;
-        color: var(--main-green);;
-        font-size: 1.5em;
-        font-family: 'Raleway', sans-serif;
-        text-decoration: none;
-        display: block;
-        width: 300px;
-        margin: 1rem auto 0;
-        text-align: center;
+        font-weight: 500;
     }
 
+
+    h2{
+        color: var(--main-green);
+        width: 300px;
+        font-size: 1.7em;
+        margin: 3.5rem 0 1rem 3rem;
+        text-transform: uppercase;
+        letter-spacing: 1.3px;
+        font-weight: 700;
+    }
+
+    p{
+        margin-left: 3rem;
+    }
+    .headline p{
+        margin-left: 1.5rem;
+    }
+
+    form{
+       width: 70vw;
+       display: block;
+       margin: 0 auto;
+    }
+    label, h3{
+        display: block;
+        font-size: 18px;
+        font-family: 'Raleway';
+        letter-spacing: 0.5px;
+        margin-top: 1.5rem;
+        margin-bottom: 5px;
+        font-weight: 500;
+        width: 300px;
+        color: #fff;
+    }
+
+    input{
+        width: 250px;
+        height: 30px;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 1.5em;
+        border: 1px solid var(--dark-grey);
+    }
+    input[type="submit"]{
+        background-color: var(--main-green);
+        height: 35px;
+        font-size: 18px;
+        color: #fff;
+        width: 150px;
+        border: none;
+
+    }
+    form section{
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+
+
+    }
+    #terug{
+        background-color: transparent;
+        font-size: 18px;
+        margin: 0;
+        justify-content: center;
+        width: 150px;
+        color: #fff;
+    }
+
+    input[type="number"]{
+        width: 80px;
+        height: 30px;
+
+    }
+    input[type="radio"]{
+        display: inline-block;
+        width: 25px;
+        }
+    input[type="radio"] + label{
+        width: 100px;
+        display: inline-block;
+    }
+    select {
+        width: 250px;
+        height: 30px;
+        margin-bottom: 2rem;
+        border-radius: 5px;
+        border: 1px solid black;
+    }
+
+    .nav{
+        width: 100vw;
+        height: 8vh;
+        background-color: #5e5c5c;
+        position: fixed;
+        bottom: 0;
+        border-radius: 10px 10px 0 0 ;
+        box-shadow: 0px -1px 18px 15px rgba(46, 46, 46, 0.72);
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+    }
+
+    .dashboard_title{
+        color: #fff;
+    }
+
+    .container {
+        background-color: #5e5c5c;
+        width: 90vw;
+        margin: 0 auto 2rem;
+        border-radius: 10px;
+        overflow: hidden;
+        height: 7rem;
+        box-shadow: 0px -1px 18px 10px rgba(46, 46, 46, 0.72);
+    }
+
+    .container section:first-of-type{
+        display: flex;
+        background-color: var(--main-green);
+        width: 100%;
+        height: 2rem;
+    }
+
+    .container h3{
+        padding: 0;
+        margin-top: 0.3rem;
+        margin-left: -1rem ;
+        font-weight: 700;
+    }
+
+    .container i{
+        padding: 0;
+        margin-top: 0.5rem;
+        margin-left: 1rem;
+
+    }
+
+    .container section:last-of-type{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+
+    }
+
+    .container section:last-of-type p{
+        margin-top: 0.4rem;
+        margin-left: 2rem;
+    }
+    .container section:last-of-type p span{
+        font-size: 2.5rem;
+
+        }
+    .container section:last-of-type ul li{
+        width: 100px;
+        list-style-type: none;
+        margin: 0.6rem 4rem;
+    }
+
+    #kcal{
+        background-color: var(--main-purple);
+    }
+
+    #weight{
+        background-color: #3470be;
+    }
+
+.training .nav{
+    background-color: #51A34B;
 }
 
+.voeding .nav{
+    background-color: var(--main-purple);
+}
+
+.voeding h2{
+   color: var(--main-purple);
+}

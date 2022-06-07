@@ -1,0 +1,42 @@
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/header.ejs') %>
+<div id="overlay">
+    <h2>vragenlijst</h2>
+    <form action="/form_3" method="POST">
+        
+        <label>Heeft u kinderen?</label>
+        <div>
+            <input type="radio" name="kids" id="ja" value="ja">
+            <label for="kids">Ja</label>
+        </div>
+        <div>
+            <input type="radio" name="kids" id="Nee" value="Nee">
+            <label for="kids">Nee</label>
+        </div>
+
+        <label>Wat is de hoogste opleiding die u heeft afgerond</label>
+        <select>
+            <option value="vmbo">VMBO</option>
+            <option value="vmbo">VMBO</option>
+            <option value="vmbo">VMBO</option>
+            <option value="vmbo">VMBO</option>
+            <option value="vmbo">VMBO</option>
+        </select>
+
+        <label>Wat is uw arbeidspositie?</label>
+        <select>
+            <option value="vmbo">Student</option>
+            <option value="vmbo">Werkend deeltijd</option>
+            <option value="vmbo">Werkend voltijd</option>
+            <option value="vmbo">Gepensioneerd</option>
+
+        </select>
+
+
+        <section>
+            <a href="/form_1" id="terug">
+                < Ga terug</a>
+                    <input type="submit" value="Volgende">
+        </section>
+    </form>
+</div>
