@@ -380,6 +380,16 @@ height: 2rem;
     background-color: #91CFAD;
 }
 
+.voeding .container-s:first-child p span, .voeding .container-s:nth-child(2) p span {
+    font-size: 2.5rem;
+}
+.voeding .container-s:first-child p, .voeding .container-s:nth-child(2) p{
+    margin: 1rem auto;
+    width: 90%;
+    text-align: center;
+
+}
+
 
 /* progress bar */
 .pbContainer {
