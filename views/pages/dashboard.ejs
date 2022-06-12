@@ -1,53 +1,55 @@
 <%- include('../partials/head.ejs') %>
 <%- include('../partials/header.ejs') %>
-<h2 class="dashboard_title">Dashboard</h2>
-<div class="container">
-    <section>
-        <i class="fa-solid fa-clock-rotate-left"></i>
-        <h3>Minuten training</h3>
-    </section>
-    <section>
-        <p>
-            <span>109</span>/week
-        </p>
-        <ul>
-            <li>vandaag: 0</li>
-            <li>doel: 300</li>
-        </ul>
-    </section>
-</div>
-<div class="container">
-    <section id="weight">
-        <i class="fa-solid fa-chart-simple"></i>
-        <h3>Progressie</h3>
-    </section>
-    <section>
-        <p>
-            <span>109</span>/week
-        </p>
-        <ul>
-            <li>vandaag: 0</li>
-            <li>doel: 300</li>
-        </ul>
-    </section>
+<div class="dashboard">
+    <h2 class="dashboard_title">Dashboard</h2>
+    <div class="container">
+        <section>
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <h3>Minuten beweging</h3>
+        </section>
+        <div class="pbContainer">
+            <div class="progressBar"></div>
+        </div>
+        <section>
+            <p>
+                <span>109</span>/week
+            </p>
+            <ul>
+                <li>vandaag: 0</li>
+                <li>doel: 300</li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="container">
+        <section id="kcal">
+            <i class="fa-solid fa-utensils"></i>
+            <h3>Calorieën</h3>
+        </section>
+        <div class="pbContainer">
+            <div class="progressBar"></div>
+        </div>
+        <section>
+
+            <ul>
+                <li>vandaag: 1200</li>
+                <li>doel: 2000</li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="container">
+        <section id="weight">
+            <i class="fa-solid fa-chart-simple"></i>
+            <h3>Progressie</h3>
+        </section>
+        <section>
+
+        </section>
+    </div>
+
+
+    <%- include('../partials/nav.ejs') %>
 </div>
 
-<div class="container">
-    <section id="kcal">
-        <i class="fa-solid fa-utensils"></i>
-        <h3>Calorieën</h3>
-    </section>
-    <section>
-        <p>
-            <span>109</span>/week
-        </p>
-        <ul>
-            <li>vandaag: 0</li>
-            <li>doel: 300</li>
-        </ul>
-    </section>
-</div>
-
-
-<%- include('../partials/nav.ejs') %>
 <%- include('../partials/footer.ejs') %>
