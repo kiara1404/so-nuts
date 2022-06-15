@@ -33,7 +33,7 @@ app.get('/form_3', (req, res) => {
     res.render('pages/form_3')
 })
 app.get('/form_1', (req, res) => {
-    res.render('pages/form_1', { questions: questionnaire.questions })
+    res.render('pages/form_1', { questions: questionnaire.questions, length: questionnaire.questions - 1 })
 })
 app.get('/dashboard', (req, res) => {
     res.render('pages/dashboard')
@@ -44,20 +44,26 @@ app.get('/training', (req, res) => {
 app.get('/voeding', (req, res) => {
     res.render('pages/voeding')
 })
+app.get('/results', (req, res) => {
+    res.render('pages/results')
+})
 
 // post
 app.post('/form_1', (req, res) => {
     res.render('pages/form_1', { questions: questionnaire.questions })
-})
+});
 app.post('/form_2', (req, res) => {
     res.render('pages/form_2')
-})
+});
 app.post('/form_3', (req, res) => {
     res.render('pages/form_3')
-})
+});
 app.post('/dashboard', (req, res) => {
     res.render('pages/dashboard')
-})
+});
+app.post('/results', (req, res) => {
+    res.render('pages/results')
+});
 
 
 

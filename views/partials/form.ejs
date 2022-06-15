@@ -1,0 +1,79 @@
+<form action="/results" method="POST">
+    <!-- persoonsgegevens-->
+    <fieldset id="form_personal" class="show">
+        <label for="<%- questions[2].id %>"><%- questions[2].text %></label>
+        <input type="text" name="<%- questions[2].id %>" placeholder="Nederland">
+        <label for="<%- questions[3].id %>"><%- questions[3].text %></label>
+        <input type="text" name="<%- questions[3].id %>" placeholder="Nederland">
+        <label for="<%- questions[4].id %>"><%- questions[4].text %></label>
+        <input type="text" name="<%- questions[4].id %>" placeholder="Nederland">
+        <h3><%- questions[5].text %></h3>
+
+        <select>
+            <% for(let i = 0; i < questions[5].options.length; i++) { %>
+            <option value="" id="<%- questions[5].options[i].id %>"><%- questions[5].options[i].text %></option>
+            <% } %>
+            <!-- <% if(questions[5].options[5] ) { %>
+                <textarea></textarea>
+                <% } %> -->
+        </select>
+
+    </fieldset>
+    <!-- arbeids positie-->
+    <fieldset id="form_arbeidspositie">
+        <label>Heeft u kinderen?</label>
+        <div>
+            <input type="radio" name="kids" id="ja" value="ja">
+            <label for="kids">Ja</label>
+        </div>
+        <div>
+            <input type="radio" name="kids" id="Nee" value="Nee">
+            <label for="kids">Nee</label>
+        </div>
+
+        <label>Wat is de hoogste opleiding die u heeft afgerond</label>
+        <select>
+            <option value="vmbo">VMBO</option>
+            <option value="vmbo">VMBO</option>
+            <option value="vmbo">VMBO</option>
+            <option value="vmbo">VMBO</option>
+            <option value="vmbo">VMBO</option>
+        </select>
+
+        <label>Wat is uw arbeidspositie?</label>
+        <select>
+            <option value="vmbo">Student</option>
+            <option value="vmbo">Werkend deeltijd</option>
+            <option value="vmbo">Werkend voltijd</option>
+            <option value="vmbo">Gepensioneerd</option>
+
+        </select>
+    </fieldset>
+
+    <!-- BMI gegevens -->
+    <fieldset id="form_bmi">
+        <label for="age">Wat is uw leeftijd? </label>
+        <input type="number" email="age">
+        <h3>Wat is uw geslacht?</h3>
+        <div>
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="male">Man</label>
+        </div>
+        <div>
+            <input type="radio" name="gender" id="female" value="female">
+            <label for="female">Vrouw</label>
+        </div>
+        <div>
+            <input type="radio" name="gender" id="nonBinair" value="nonBinair">
+            <label for="nonBinair">Non-binair</label>
+        </div>
+        <label for="height">Wat is uw lengte in cm? </label>
+        <input type="number" name="height">
+        <label for="weight">Wat is uw gewicht in kg?</label>
+        <input type="number" email="weight">
+    </fieldset>
+
+        <button class="hide" type="submit" id="form-submit">Afronden</button>
+        <button class="btn-next" type="button">Volgende</button>
+</form>
+

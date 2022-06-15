@@ -1,33 +1,14 @@
 <%- include('../partials/head.ejs') %>
 <%- include('../partials/header.ejs') %>
-<div id="overlay">
+<div id="form">
     <h2>vragenlijst</h2>
-    <form action="/form_2" method="POST">
-        <label for="<%- questions[2].id %>"><%- questions[2].text %></label>
-        <input type="text" name="<%- questions[2].id %>" placeholder="Nederland">
-        <label for="<%- questions[3].id %>"><%- questions[3].text %></label>
-        <input type="text" name="<%- questions[3].id %>" placeholder="Nederland">
-        <label for="<%- questions[4].id %>"><%- questions[4].text %></label>
-        <input type="text" name="<%- questions[4].id %>" placeholder="Nederland">
-        <h3><%- questions[5].text %></h3>
+    <%- include('../partials/form.ejs') %>
 
-        <select>
-            <% for(let i = 0; i < questions[5].options.length; i++) { %>
-                <option value="" id="<%- questions[5].options[i].id %>"><%- questions[5].options[i].text %></option>
-           <% } %>
-           <!-- <% if(questions[5].options[5] ) { %>
-                <textarea></textarea>
-                <% } %> -->
-           
-            
-        </select>        
-        
-        
-        <section>
-            <a href="/aanmelden" id="terug">
-                < Ga terug</a>
-                    <input type="submit" value="Volgende">
-        </section>
+    <section class="form-btn">
+        <!-- <button class="btn-next">Volgende</button> -->
+    </section>
 
-    </form>
+
 </div>
+
+<%- include('../partials/footer.ejs') %>

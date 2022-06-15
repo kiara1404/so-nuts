@@ -1,0 +1,10 @@
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/header.ejs') %>
+<form action="/training" id="trainingCardio" method="POST" class="hide">
+  <label for="type">Wat voor workout heeft u gedaan?</label>
+    <input type="text" name="type">
+    <label for="min">Hoeveel minuten heeft u bewogen?</label>
+    <input type="number" name="min">
+    <button type="submit">Toevoegen</button>
+</form>
+<%- include('../partials/footer.ejs') %>
