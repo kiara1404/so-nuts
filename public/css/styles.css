@@ -30,8 +30,9 @@ i {
 color: #fff;
 margin: 2rem;
 }
-#overlay{
-margin: 5rem auto 0;
+.index{
+    width: 100vw;
+    height: 100vh;
 }
 .headline{
     display: block;
@@ -43,19 +44,22 @@ h1{
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1.3px;
-    font-size: 4.5rem;
-    width: 340px;
+    font-size: 4.7rem;
+    width: 350px;
     text-align: center;
     color: #fff;
 }
 
 
-p{
+#index p{
     color: #fff;
-    width: 320px;
+    width: 350px;
     letter-spacing: 0.8px;
-    margin-left: 10px;
     font-weight: 400;
+    font-size: 20px;
+    text-align: left;
+    margin: 0.5rem auto 6rem;
+    padding-left: 12px;
 }
 
 section > a:first-child {
@@ -73,36 +77,37 @@ section > a:first-child {
 }
 
 
-h2{
+#aanmelden h2, h2{
     color: #fff;
-    width: 300px;
+    width: 90vw;
     font-size: 1.7em;
-    margin: 3.5rem 0 1rem 3rem;
+    margin: 3.5rem auto;
     text-transform: uppercase;
     letter-spacing: 1.3px;
     font-weight: 700;
+    padding-left: 0.2rem;
 }
 
-p{
-    margin-left: 3rem;
+#aanmelden p, .results p{
+    width: 90vw;
+    padding-left: 1rem;
+    display: block;
+    margin: 0 auto;
+
 }
-.headline p{
-    margin-left: 1.5rem;
-}
+
 /* form */
 form{
-    width: 80vw;
+    width: 90vw;
     display: block;
     margin: 0 auto;
     height: 70vh;
-    overflow: hidden;
     padding:  0 15px;
 }
 
 form fieldset{
-
     border: none;
-    display: none;
+
 }
 
 
@@ -113,36 +118,51 @@ label, h3{
     font-family: 'Raleway';
     letter-spacing: 0.5px;
     margin-top: 1.5rem;
-    margin-bottom: 5px;
+    margin-bottom: 0.6rem;
     font-weight: 500;
     width: 300px;
     color: #fff;
 }
 
 input{
-    width: 250px;
+    width: 100%;
     height: 30px;
     border-radius: 5px;
     border: none;
     margin-bottom: 1.5em;
+}
 
-
+input[type="text"]::placeholder{
+    padding: 0.3rem;
+    font-style: italic;
 }
 .form-btn{
     width: 80vw;
     padding: 0 15px;
     margin: 0 auto;
 }
-.btn-next, #form-submit{
+.btn-next{
     background-color: var(--blue);
     height: 35px;
     font-size: 18px;
     color: #fff;
     border: none;
     border-radius: 5px;
-    width: 250px;
+    width: 100%;
     margin: 0 auto;
 
+}
+
+#form-submit{
+    
+    background-color: var(--blue);
+    height: 35px;
+    font-size: 18px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    margin: 0 auto;
 }
 form section{
     display: flex;
@@ -174,7 +194,7 @@ input[type="radio"] + label{
     display: inline-block;
 }
 select {
-    width: 250px;
+    width: 100%;
     height: 30px;
     margin-bottom: 2rem;
     border-radius: 5px;
@@ -185,6 +205,13 @@ input[type="submit"]{
     background-color: var(--blue);
     font-size: 18px;
     color: #fff;
+    height: 35px;
+}
+
+#form .progressBar{
+    background: rgb(77,31,232);
+    background: linear-gradient(103deg, rgb(31, 111, 232) 0%, rgb(3, 231, 247) 100%);
+    
 }
 /* NAV */
 .nav{
@@ -232,13 +259,46 @@ input[type="submit"]{
     justify-content: center;
     margin: 3rem auto 0;
 }
+.dashboard > section h3{
+    width: 90vw;
+    margin: 0 auto 0.5rem;
+    padding:  0 5px;
+    font-weight: 600;
+
+}
+.dashboard section .container:first-of-type{
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    box-shadow: none;
+
+}
+.container:first-of-type article{
+    background-color: #818080;
+    border-radius: 10px;
+    width: 48%;
+    
+}
+.container:first-of-type article i{
+    display: block;
+    width: 1.5rem;
+    font-size: 2.6rem;
+    margin: 1.5rem auto 0;
+}
+.container:first-of-type article p{
+    padding: 0.2rem 1.2rem;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
 .container {
     background-color: #5e5c5c;
     width: 90vw;
     margin: 0 auto 2rem;
     border-radius: 10px;
     overflow: hidden;
-    height: 9rem;
+    height: 8rem;
     box-shadow: 0px -1px 18px 10px rgba(46, 46, 46, 0.72);
 }
 
@@ -294,20 +354,40 @@ input[type="submit"]{
     justify-content: space-evenly;
 
 }
-
-.container section:last-of-type p{
+.container:nth-of-type(1) div{
+    display: flex;
+    justify-content: space-between;
+}
+.container:nth-of-type(1) div p{
     margin-top: 0.4rem;
     margin-left: 2rem;
 }
-.container section:last-of-type p span{
+.container:nth-of-type(1) div p span{
     font-size: 2.5rem;
 
     }
-.container section:last-of-type ul li{
-    width: 100px;
+.container:nth-of-type(1) ul{
+    width: 300px;
     list-style-type: none;
-    margin: 0.6rem 4rem;
+    margin: 0.6rem 2rem 0 3rem;
 }
+.container:nth-of-type(2){
+    height: 9rem;
+}
+.container:nth-of-type(2) article{
+    width: 100%;
+    display: flex;
+    margin: 0.2rem;
+}
+.container:nth-of-type(2) article p {
+    display: block;
+    padding: 0.2rem;
+
+} 
+.container:nth-of-type(2) article p span{
+    font-size: 1.5rem;
+}
+
 
 /* training*/
 .training .wrapper{
@@ -475,7 +555,7 @@ height: 2rem;
 }
 .results a {
     display: block;
-    width: 75vw;
+    width: 80vw;
     margin: 0 auto;
     background-color: var(--blue);
     color: #fff;
@@ -492,6 +572,10 @@ height: 2rem;
 
 .hide{
     display: none;
+}
+
+.overflow{
+    overflow: hidden;
 }
 /* progress bar */
 .pbContainer {

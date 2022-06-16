@@ -10,12 +10,11 @@
         <h3><%- questions[5].text %></h3>
 
         <select>
-            <% for(let i = 0; i < questions[5].options.length; i++) { %>
-            <option value="" id="<%- questions[5].options[i].id %>"><%- questions[5].options[i].text %></option>
+            <% for(let i = 0; i < questions[5].answerOptions.length; i++) { %>
+            <option value="" id="<%- questions[5].answerOptions[i].id %>"><%- questions[5].answerOptions[i].text %>
+            </option>
             <% } %>
-            <!-- <% if(questions[5].options[5] ) { %>
-                <textarea></textarea>
-                <% } %> -->
+
         </select>
 
     </fieldset>
@@ -73,7 +72,6 @@
         <input type="number" email="weight">
     </fieldset>
 
-        <button class="hide" type="submit" id="form-submit">Afronden</button>
-        <button class="btn-next" type="button">Volgende</button>
+    <button  type="submit" id="form-submit">Afronden</button>
+    <button class="btn-next hide" type="button">Volgende</button>
 </form>
-

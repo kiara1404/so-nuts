@@ -1,11 +1,11 @@
 import express from 'express';
 import { readFile } from 'fs/promises';
 import fetch from 'node-fetch'
-const questionnaire = JSON.parse(
-    await readFile(
-        new URL('./public/questionnaire.json', import.meta.url)
-    )
-);
+// const questionnaire = JSON.parse(
+//     await readFile(
+//         new URL('./public/questionnaire.json', import.meta.url)
+//     )
+// );
 const app = express();
 const port = process.env.PORT || 2000
 
@@ -26,15 +26,7 @@ app.get('/', (req, res) => {
 app.get('/aanmelden', (req, res) => {
     res.render('pages/aanmelden')
 })
-app.get('/form_2', (req, res) => {
-    res.render('pages/form_2')
-})
-app.get('/form_3', (req, res) => {
-    res.render('pages/form_3')
-})
-app.get('/form_1', (req, res) => {
-    res.render('pages/form_1', { questions: questionnaire.questions, length: questionnaire.questions - 1 })
-})
+app.get('/form_1', getData)
 app.get('/dashboard', (req, res) => {
     res.render('pages/dashboard')
 })
@@ -49,15 +41,11 @@ app.get('/results', (req, res) => {
 })
 
 // post
-app.post('/form_1', (req, res) => {
-    res.render('pages/form_1', { questions: questionnaire.questions })
-});
-app.post('/form_2', (req, res) => {
-    res.render('pages/form_2')
-});
-app.post('/form_3', (req, res) => {
-    res.render('pages/form_3')
-});
+// app.post('/form_1', (req, res) => {
+//     res.render('pages/form_1', { questions: questionnaire.questions })
+// });
+
+app.post('/form_1', getData)
 app.post('/dashboard', (req, res) => {
     res.render('pages/dashboard')
 });
@@ -77,8 +65,8 @@ async function getData(req, res) {
 
         const data = await fetch('https://fhir.mibplatform.nl/api/questionnaires/2')
         const response = await data.json()
-        console.log(response)
-        res.render('pages/index')
+        console.log(response.questions)
+        res.render('pages/form_1', { questions: response.questions })
     }
     catch (err) {
         console.log(err)

@@ -1,16 +1,29 @@
 <%- include('../partials/head.ejs') %>
 <%- include('../partials/header.ejs') %>
-<div class="dashboard">
-    <h2 class="dashboard_title">Dashboard</h2>
+<main class="dashboard">
+    <h2 class="dashboard_title">Jouw overzicht</h2>
+    <section>
+        <h3>Persoonlijke doelen</h3>
+        <div class="container">
+            <article>
+                <p>Meer groente</p>
+                <i class="fa-solid fa-carrot fa-xl"></i>
+            </article>
+            <article>
+                <p>Meer bewegen</p>
+                <i class="fa solid fa-person-walking fa-xl"></i>
+            </article>
+    </section>
+    </div>
     <div class="container">
         <section>
-            <i class="fa-solid fa-clock-rotate-left"></i>
+            <i class="fa-solid fa-person-running"></i>
             <h3>Minuten beweging</h3>
         </section>
         <div class="pbContainer">
             <div class="progressBar"></div>
         </div>
-        <section>
+        <div>
             <p>
                 <span>109</span>/week
             </p>
@@ -18,7 +31,7 @@
                 <li>vandaag: 0</li>
                 <li>doel: 300</li>
             </ul>
-        </section>
+        </div>
     </div>
 
     <div class="container">
@@ -29,9 +42,13 @@
         <div class="pbContainer">
             <div class="progressBar"></div>
         </div>
-        <section>
+        <article>
             <p><span>1200</span>/2000 kcal</p>
-        </section>
+            <div>
+                <p><span>50</span>/100 g eiwitten</p>
+                <p><span>76</span>/200 g groente</p>
+            </div>
+        </article>
     </div>
 
     <div class="container">
@@ -46,6 +63,6 @@
 
 
     <%- include('../partials/nav.ejs') %>
-</div>
+</main>
 
 <%- include('../partials/footer.ejs') %>

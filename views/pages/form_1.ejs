@@ -1,7 +1,11 @@
 <%- include('../partials/head.ejs') %>
 <%- include('../partials/header.ejs') %>
-<div id="form">
+<main id="form">
     <h2>vragenlijst</h2>
+            <div class="pbContainer">
+                <div class="progressBar"></div>
+            </div>
+            <progress max="3" value="1"></progress>
     <%- include('../partials/form.ejs') %>
 
     <section class="form-btn">
@@ -9,6 +13,6 @@
     </section>
 
 
-</div>
+</main>
 
 <%- include('../partials/footer.ejs') %>
