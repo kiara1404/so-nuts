@@ -1,6 +1,12 @@
 <form action="/results" method="POST">
+
+    <!-- begin -->
+    <fieldset class="show">
+        <label for="name">Naam</label>
+        <input type="text" name="name" placeholder="Uw naam hier">
+    </fieldset>
     <!-- persoonsgegevens-->
-    <fieldset id="form_personal" class="show">
+    <fieldset id="form_personal">
         <label for="<%- questions[2].id %>"><%- questions[2].text %></label>
         <input type="text" name="<%- questions[2].id %>" placeholder="Nederland">
         <label for="<%- questions[3].id %>"><%- questions[3].text %></label>
@@ -14,7 +20,7 @@
             <option value="" id="<%- questions[5].answerOptions[i].id %>"><%- questions[5].answerOptions[i].text %>
             </option>
             <% } %>
-            
+
 
         </select>
 
@@ -73,6 +79,6 @@
         <input type="number" email="weight">
     </fieldset>
 
-    <button  type="submit" id="form-submit">Afronden</button>
+    <button type="submit" id="form-submit">Afronden</button>
     <button class="btn-next hide" type="button">Volgende</button>
 </form>

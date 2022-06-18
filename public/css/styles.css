@@ -209,7 +209,7 @@ input[type="submit"]{
 #form .progressBar{
     background: rgb(77,31,232);
     background: linear-gradient(103deg, rgb(31, 111, 232) 0%, rgb(3, 231, 247) 100%);
-    width: 33%;
+    width: 25%;
     transition: 0.3s ease-in;
 }
 /* NAV */
@@ -564,14 +564,14 @@ height: 2rem;
     font-weight: 600;
     text-decoration: none;
 }
-
+.hide{
+    display: none;
+}
 .show{
    display: block;
 }
 
-.hide{
-    display: none;
-}
+
 
 .overflow{
     overflow: hidden;

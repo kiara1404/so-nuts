@@ -4,8 +4,7 @@ const form = document.querySelector('#form form');
 const nextButtons = document.querySelectorAll('.btn-next');
 const nextBtn = document.querySelector('.btn-next');
 const submitBtn = document.querySelector('#form-submit');
-const fieldsetTwo = document.querySelector(`fieldset:nth-of-type(2)`);
-const fieldsetThree = document.querySelector(`fieldset:nth-of-type(3)`);
+const fieldset = document.querySelectorAll('#form fieldset')
 const progress = document.querySelector('#form .progressBar');
 let i = 1
 
@@ -13,8 +12,9 @@ let i = 1
 // when JS is enabled
 if (form) {
     addClass(submitBtn, 'hide');
-    addClass(fieldsetTwo, 'hide');
-    addClass(fieldsetThree, 'hide');
+    addClass(fieldset[1], 'hide');
+    addClass(fieldset[2], 'hide');
+    addClass(fieldset[3], 'hide');
     deleteClass(nextBtn, 'hide');
 
     nextButtons.forEach(e => e.addEventListener('click', () => {
@@ -34,16 +34,18 @@ if (form) {
     }
 
     function updateFormSteps() {
+        document.querySelector(`fieldset:nth-of-type(${i})`).classList.add('hide');
         document.querySelector(`fieldset:nth-of-type(${i})`).classList.remove('show');
         i++;
         console.log('i =', i);
         document.querySelector(`fieldset:nth-of-type(${i})`).classList.add('show');
+        
         showSubmitBtn();
 
     }
 
     function showSubmitBtn() {
-        if (i >= 3) {
+        if (i >= fieldset.length) {
             submitBtn.classList.remove('hide');
             nextBtn.classList.add('hide');
         }
@@ -51,12 +53,12 @@ if (form) {
 
 
     function updateProgressBar() {
-        const width = i / 3
+        const totalFieldsets = fieldset.length;
+        const width = i / totalFieldsets
         progress.style.width = width * 100 + '%';
 
     }
 }
-
 // END FORM
 
 
