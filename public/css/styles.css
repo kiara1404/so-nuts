@@ -81,7 +81,7 @@ section > a:first-child {
     color: #fff;
     width: 90vw;
     font-size: 1.7em;
-    margin: 3.5rem auto;
+    margin: 3.5rem auto 1rem;
     text-transform: uppercase;
     letter-spacing: 1.3px;
     font-weight: 700;
@@ -98,7 +98,7 @@ section > a:first-child {
 
 /* form */
 form{
-    width: 90vw;
+    width: 95vw;
     display: block;
     margin: 0 auto;
     height: 70vh;
@@ -109,8 +109,6 @@ form fieldset{
     border: none;
 
 }
-
-
 
 label, h3{
     display: block;
@@ -211,7 +209,8 @@ input[type="submit"]{
 #form .progressBar{
     background: rgb(77,31,232);
     background: linear-gradient(103deg, rgb(31, 111, 232) 0%, rgb(3, 231, 247) 100%);
-    
+    width: 33%;
+    transition: 0.3s ease-in;
 }
 /* NAV */
 .nav{
@@ -590,7 +589,7 @@ height: 2rem;
     height: 100%;
     background: rgb(77,31,232);
     background: linear-gradient(103deg, rgb(229, 232, 31) 0%, rgb(247, 80, 3) 100%);
-    animation: progress-animation 2s forwards;
+    /* animation: progress-animation 2s forwards; */
 
 }
 
