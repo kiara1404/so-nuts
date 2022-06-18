@@ -23,9 +23,6 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
     res.render('pages/index')
 })
-app.get('/aanmelden', (req, res) => {
-    res.render('pages/aanmelden')
-})
 app.get('/form_1', getData)
 app.get('/dashboard', (req, res) => {
     res.render('pages/dashboard')

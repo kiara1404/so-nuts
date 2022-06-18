@@ -7,7 +7,7 @@
 --lighter-green: #91CFAD;
 --darker-green: #589661;
 --grey-green: #8bbd69;
---dark-grey: #282828;
+--dark-grey: #4b4949;
 --blue: #3470be;
 
 }
@@ -205,7 +205,9 @@ input[type="submit"]{
     color: #fff;
     height: 35px;
 }
-
+#form p{
+    margin: 1.5rem 0;
+}
 #form .progressBar{
     background: rgb(77,31,232);
     background: linear-gradient(103deg, rgb(31, 111, 232) 0%, rgb(3, 231, 247) 100%);
@@ -312,7 +314,7 @@ input[type="submit"]{
 
 }
 
-.container-s h3{
+.container-s h3, .training .container h3{
     margin-top: 0rem;
     padding-top: 0.3rem;
     color: var(--dark-grey);
@@ -358,7 +360,7 @@ input[type="submit"]{
     justify-content: space-between;
 }
 .container:nth-of-type(1) div p{
-    margin-top: 0.4rem;
+    margin-top: 1rem;
     margin-left: 2rem;
 }
 .container:nth-of-type(1) div p span{
@@ -366,9 +368,9 @@ input[type="submit"]{
 
     }
 .container:nth-of-type(1) ul{
-    width: 300px;
+    width: 50%;
     list-style-type: none;
-    margin: 0.6rem 2rem 0 3rem;
+    margin: 1rem 2rem 0 4rem;
 }
 .container:nth-of-type(2){
     height: 9rem;
@@ -390,6 +392,7 @@ input[type="submit"]{
 
 /* training*/
 .training .wrapper{
+    width: 95vw;
     justify-content: space-evenly;
 }
 #cardioBtn, #krachtBtn {
@@ -425,7 +428,7 @@ background-color: var(--main-purple)
     color: var(--main-purple);
 }
 
-.training .container-s:first-child section{
+.training .container-s:nth-child(1) section{
     background-color: var(--light-purple);
 
 }
@@ -436,9 +439,24 @@ background-color: var(--main-purple)
 }
 
 .training .container-s:nth-child(3) section{
-background-color: var(--grey-purple);
-height: 2rem;
+    background-color: var(--grey-purple);
+    height: 2rem;
 }
+.training p:first-of-type{
+    width: 90vw;
+    margin: 0 auto;
+
+}
+.training .container-s p{
+    width: 70%;
+    margin: 1rem auto 0;
+    text-align: center;
+}
+.training .container-s:nth-child(1) p span, .training .container-s:nth-child(2) p span{
+    display: block;
+    font-size: 2rem;
+}
+
 
 
 /* voeding pagina */
@@ -453,15 +471,15 @@ height: 2rem;
 }
 
 .voeding .container-s:nth-child(3) section{
-background-color: var(--grey-green);
-height: 2rem;
+    background-color: var(--grey-green);
+    height: 2rem;
 }
-.container-s:nth-child(3) p {
+.container-s:nth-child(3) p, .training .container p {
     width: 80%;
     margin: 0.5rem auto;
     text-align: center;
 }
-.container-s:nth-child(3) p span{
+.container-s:nth-child(3) p span, .training .container p span{
     font-size: 2rem;
 }
 
@@ -471,6 +489,8 @@ height: 2rem;
     list-style: none;
     border-radius: 10px;
 }
+
+
 
 .voeding .nav{
     background-color: var(--main-green);
@@ -506,6 +526,12 @@ height: 2rem;
     text-align: center;
 
 }
+.training .container{
+    margin: 2rem auto -2rem;
+    height: 6rem;
+}
+
+
 
 /* resultaten */
 

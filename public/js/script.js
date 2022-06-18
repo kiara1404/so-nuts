@@ -34,12 +34,13 @@ if (form) {
     }
 
     function updateFormSteps() {
-        document.querySelector(`fieldset:nth-of-type(${i})`).classList.add('hide');
-        document.querySelector(`fieldset:nth-of-type(${i})`).classList.remove('show');
+
+         document.querySelector(`fieldset:nth-of-type(${i})`).classList.add('hide');
+         document.querySelector(`fieldset:nth-of-type(${i})`).classList.remove('show');
         i++;
         console.log('i =', i);
         document.querySelector(`fieldset:nth-of-type(${i})`).classList.add('show');
-        
+
         showSubmitBtn();
 
     }
