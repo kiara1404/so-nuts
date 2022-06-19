@@ -1,7 +1,13 @@
 <%- include('../partials/head.ejs') %>
 <main class="training">
     <h2>Beweging</h2>
-    <p> DOEL Beschrijving uitgebreid</p>
+    <div>
+        <article>
+            <i class="fa solid fa-person-walking fa-xl"></i>
+            <p>Jouw doel is om minimaal twee keer per week aan krachttraining te doen.</p>
+        </article>
+    </div>
+   
     <div class="container">
         <section>
             <h3>Wekelijkse actieve minuten</h3>
@@ -31,7 +37,7 @@
             <p><span>4300</span>/10000</p>
         </div>
     </div>
-    <button class="btn-secondary">Voeg gegevens toe</button>
+    <a class="btn-secondary" id="add-training-btn" href="/add_training">Voeg gegevens toe</a>
 
     <%- include('../partials/nav.ejs') %>
 </main>

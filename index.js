@@ -1,5 +1,5 @@
 import express from 'express';
-import { readFile } from 'fs/promises';
+import * as fs from 'fs';
 import fetch from 'node-fetch'
 // const questionnaire = JSON.parse(
 //     await readFile(
@@ -29,26 +29,24 @@ app.get('/dashboard', (req, res) => {
 })
 app.get('/training', (req, res) => {
     res.render('pages/training')
-})
+});
 app.get('/voeding', (req, res) => {
     res.render('pages/voeding')
-})
+});
 app.get('/results', (req, res) => {
     res.render('pages/results')
-})
-
-// post
-// app.post('/form_1', (req, res) => {
-//     res.render('pages/form_1', { questions: questionnaire.questions })
-// });
-
-app.post('/form_1', getData)
-app.post('/dashboard', (req, res) => {
-    res.render('pages/dashboard')
 });
+app.get('/add_training', (req, res) => {
+    res.render('pages/add_training')
+});
+
+// POST
+app.post('/form_1', getData);
+app.post('/dashboard', postAddTraining);
 app.post('/results', (req, res) => {
     res.render('pages/results')
 });
+app.post('/training', postAddTraining)
 
 
 
@@ -69,4 +67,29 @@ async function getData(req, res) {
         console.log(err)
 
     }
+}
+
+
+
+function postAddTraining(req, res) {
+    let stringData;
+    const data = {
+        "trainingType": req.body.trainingType,
+        "nameTraining": req.body.nameTraining,
+        "minTraining": req.body.minTraining
+    }
+    stringData = JSON.stringify(data);
+    console.log(data);
+
+
+    fs.appendFile('public/json/addTraining.json', stringData, (err, data) => {
+        if (data) {
+            stringData = JSON.parse(data)
+        }
+        if (err) {
+            console.log(err)
+        }
+    });
+    res.render('pages/training', { data: data })
+
 }

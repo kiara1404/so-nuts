@@ -299,7 +299,7 @@ input[type="submit"]{
     margin: 0 auto 2rem;
     border-radius: 10px;
     overflow: hidden;
-    height: 8rem;
+    height: 8.5rem;
     box-shadow: 0px -1px 18px 10px rgba(46, 46, 46, 0.72);
 }
 
@@ -362,6 +362,7 @@ input[type="submit"]{
 .container:nth-of-type(1) div p{
     margin-top: 1rem;
     margin-left: 2rem;
+    font-size: 1.5rem;
 }
 .container:nth-of-type(1) div p span{
     font-size: 2.5rem;
@@ -388,7 +389,17 @@ input[type="submit"]{
 .container:nth-of-type(2) article p span{
     font-size: 1.5rem;
 }
-
+.dashboard .container article p{
+    padding: 0.8rem ;
+}
+.dashboard .container:last-of-type article{
+    display: flex;
+    margin-top: 0.5rem;
+}
+.dashboard .container:last-of-type article i{
+   margin: 2rem 1rem 1rem 1rem;
+   font-size: 2rem;
+}
 
 /* training*/
 .training .wrapper{
@@ -406,11 +417,29 @@ input[type="submit"]{
 .training .nav{
 background-color: var(--main-purple)
 }
-
+.training > div:first-of-type, .voeding > div:first-of-type{
+    width: 90vw;
+    margin: 0 auto;
+}
+.training article:first-of-type, .voeding article:first-of-type {
+    width: 100%;
+    display: flex;
+    background-color: #818080;
+    border-radius: 10px;
+    height: 4.5rem;
+}
+.training article:first-of-type p, .voeding article:first-of-type p{
+    padding: 0.4rem 0.4rem;
+}
+.training article:first-of-type i, .voeding article:first-of-type i{
+    width: 3rem;
+    margin: 2rem 0.5rem;
+    text-align: center;
+    font-size: 2rem;
+}
 .training .btn-secondary{
     display: block;
-    width: 85vw;
-    height: 3rem;
+    width: 90vw;
     margin: 1rem auto;
     border-radius: 10px;
     border: 2px solid var(--main-purple);
@@ -418,6 +447,9 @@ background-color: var(--main-purple)
     color: var(--main-purple);
     background-color: transparent;
     font-weight: 600;
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none;
 }
 
 .training .btn-secondary:hover{
@@ -456,6 +488,7 @@ background-color: var(--main-purple)
     display: block;
     font-size: 2rem;
 }
+
 
 
 

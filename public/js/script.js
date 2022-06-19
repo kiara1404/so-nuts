@@ -1,12 +1,23 @@
 console.log('are we connected?');
-
 const form = document.querySelector('#form form');
 const nextButtons = document.querySelectorAll('.btn-next');
 const nextBtn = document.querySelector('.btn-next');
 const submitBtn = document.querySelector('#form-submit');
 const fieldset = document.querySelectorAll('#form fieldset')
 const progress = document.querySelector('#form .progressBar');
+
 let i = 1
+
+
+// adds class to element
+function addClass(element, className) {
+    element.classList.add(className);
+};
+
+//removes class from element
+function deleteClass(element, className) {
+    element.classList.remove(className);
+}
 
 // FORM
 // when JS is enabled
@@ -22,16 +33,6 @@ if (form) {
         updateProgressBar()
 
     }));
-
-    // adds class to element
-    function addClass(element, className) {
-        element.classList.add(className);
-    };
-
-    //removes class from element
-    function deleteClass(element, className) {
-        element.classList.remove(className);
-    }
 
     function updateFormSteps() {
 
@@ -61,8 +62,4 @@ if (form) {
     }
 }
 // END FORM
-
-
-
-
 
