@@ -25,8 +25,18 @@ app.get('/', (req, res) => {
 })
 app.get('/form_1', getData)
 app.get('/dashboard', (req, res) => {
-    res.render('pages/dashboard')
-})
+    fs.readFile('public/json/addTraining.json', 'utf8', function (err, data) {
+        if (err) throw err;
+        let formData;
+        if (data) {
+            formData = JSON.parse(data)
+            console.log(formData)
+
+        }
+        res.render('pages/dashboard', { data: formData })
+    })
+});
+
 app.get('/training', (req, res) => {
     fs.readFile('public/json/addTraining.json', 'utf8', function (err, data) {
         if (err) throw err;

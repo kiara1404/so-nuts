@@ -5,8 +5,8 @@ const nextBtn = document.querySelector('.btn-next');
 const submitBtn = document.querySelector('#form-submit');
 const fieldset = document.querySelectorAll('#form fieldset')
 const progress = document.querySelector('#form .progressBar');
-
 let i = 1
+
 
 
 // adds class to element
@@ -36,8 +36,8 @@ if (form) {
 
     function updateFormSteps() {
 
-         document.querySelector(`fieldset:nth-of-type(${i})`).classList.add('hide');
-         document.querySelector(`fieldset:nth-of-type(${i})`).classList.remove('show');
+        document.querySelector(`fieldset:nth-of-type(${i})`).classList.add('hide');
+        document.querySelector(`fieldset:nth-of-type(${i})`).classList.remove('show');
         i++;
         console.log('i =', i);
         document.querySelector(`fieldset:nth-of-type(${i})`).classList.add('show');

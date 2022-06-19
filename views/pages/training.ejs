@@ -12,7 +12,10 @@
         <section>
             <h3>Wekelijkse actieve minuten</h3>
         </section>
-        <p><span>90 </span>/150</p>
+        <p><span id="totalMin">
+                <% var totalMin = data.minTraining %>
+                <%= totalMin %>
+            </span>/150</p>
     </div>
     <div class="wrapper">
 
@@ -20,10 +23,11 @@
             <section>
                 <h3>Cardio</h3>
             </section>
+            <% var totalMin = data.minTraining %>
             <%if(data && data.trainingType == 'cardio') { %>
-            <p><span><%= data.minTraining %>:00 </span> minuten</p>
+            <p><span class="cardioValue"><%= data.minTraining %>:00 </span> minuten</p>
             <% } else { %>
-            <p><span>0:00 </span> minuten</p>
+            <p><span class="cardioValue">0:00 </span> minuten</p>
             <% } %>
         </div>
 
@@ -32,9 +36,9 @@
                 <h3>Kracht</h3>
             </section>
             <%if(data && data.trainingType == 'kracht') { %>
-            <p><span><%= data.minTraining %>:00 </span> minuten</p>
+            <p><span class="krachtValue"><%= data.minTraining %>:00 </span> minuten</p>
             <% } else { %>
-            <p><span>0:00 </span> minuten</p>
+            <p><span class="krachtValue">0:00 </span> minuten</p>
             <% } %>
 
         </div>
