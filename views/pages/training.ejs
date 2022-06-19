@@ -7,7 +7,7 @@
             <p>Jouw doel is om minimaal twee keer per week aan krachttraining te doen.</p>
         </article>
     </div>
-   
+
     <div class="container">
         <section>
             <h3>Wekelijkse actieve minuten</h3>
@@ -15,19 +15,27 @@
         <p><span>90 </span>/150</p>
     </div>
     <div class="wrapper">
-    
+
         <div class="container-s">
             <section>
                 <h3>Cardio</h3>
             </section>
-            <p><span>65:00 </span>minuten</p>
+            <%if(data && data.trainingType == 'cardio') { %>
+            <p><span><%= data.minTraining %>:00 </span> minuten</p>
+            <% } else { %>
+            <p><span>0:00 </span> minuten</p>
+            <% } %>
         </div>
 
         <div class="container-s">
             <section>
                 <h3>Kracht</h3>
             </section>
-            <p><span>25:00</span> minuten</p>
+            <%if(data && data.trainingType == 'kracht') { %>
+            <p><span><%= data.minTraining %>:00 </span> minuten</p>
+            <% } else { %>
+            <p><span>0:00 </span> minuten</p>
+            <% } %>
 
         </div>
         <div class="container-s">

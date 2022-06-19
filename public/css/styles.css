@@ -426,10 +426,10 @@ background-color: var(--main-purple)
     display: flex;
     background-color: #818080;
     border-radius: 10px;
-    height: 4.5rem;
+    height: 5rem;
 }
 .training article:first-of-type p, .voeding article:first-of-type p{
-    padding: 0.4rem 0.4rem;
+    padding: 0.6rem 0.4rem;
 }
 .training article:first-of-type i, .voeding article:first-of-type i{
     width: 3rem;

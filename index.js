@@ -28,7 +28,15 @@ app.get('/dashboard', (req, res) => {
     res.render('pages/dashboard')
 })
 app.get('/training', (req, res) => {
-    res.render('pages/training')
+    fs.readFile('public/json/addTraining.json', 'utf8', function (err, data) {
+        if (err) throw err;
+        let formData;
+        if (data) {
+            formData = JSON.parse(data)
+            console.log(formData)
+        }
+        res.render('pages/training', { data: formData })
+    });
 });
 app.get('/voeding', (req, res) => {
     res.render('pages/voeding')
@@ -90,6 +98,5 @@ function postAddTraining(req, res) {
             console.log(err)
         }
     });
-    res.render('pages/training', { data: data })
-
+    res.render('pages/training')
 }
