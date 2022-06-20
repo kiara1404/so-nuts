@@ -18,7 +18,7 @@ function addClass(element, className) {
 function deleteClass(element, className) {
     element.classList.remove(className);
 }
-
+console.log(fieldset.length)
 // FORM
 // when JS is enabled
 if (form) {
@@ -26,6 +26,8 @@ if (form) {
     addClass(fieldset[1], 'hide');
     addClass(fieldset[2], 'hide');
     addClass(fieldset[3], 'hide');
+    addClass(fieldset[4], 'hide');
+    addClass(fieldset[5], 'hide');
     deleteClass(nextBtn, 'hide');
 
     nextButtons.forEach(e => e.addEventListener('click', () => {

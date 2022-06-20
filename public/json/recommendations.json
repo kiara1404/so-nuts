@@ -1,0 +1,41 @@
+{
+    "id": "1",
+    "title": "...",
+    "description": "....",
+    "recommendations": {
+        "voeding": [
+            {
+                "id": "1",
+                "text": "Eet minstens 100 gram groente per dag",
+                "type": "voeding"
+            },
+            {
+                "id": "2",
+                "text": "Eet minstens 60 gram eiwitten per dag",
+                "type": "voeding"
+            },
+            {
+                "id": "3",
+                "text": "Eet minstens één keer per week vegetarisch",
+                "type": "voeding"
+            }
+        ],
+        "beweging": [
+            {
+                "id": "4",
+                "text": "Doe minstens twee keer per week aan krachttrainng",
+                "type": "beweging"
+            },
+            {
+                "id": "5",
+                "text": "Wandel elke dag twintig minuten om stress te verlagen",
+                "type": "beweging"
+            },
+            {
+                "id": "1",
+                "text": "Beweeg minstens 150 minuten per  week",
+                "type": "beweging"
+            }
+        ]
+    }
+}

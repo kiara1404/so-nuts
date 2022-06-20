@@ -5,41 +5,35 @@
     <p>Kies maximaal drie onderwerpen waar u aan wil werken.</p>
     <section class="wrapper">
 
-        <div class="results-groente">
-            <input type="checkbox" name="groente">
-            <label for="groente" name="groente">
+        <% for(let i=0; i < voeding.length; i++){ %>
+        <div class="results-voeding">
+            <input type="checkbox" name="voeding">
+            <label for="voeding" name="voeding">
                 <section>
-                    <h3>Minuten beweging</h3>
+                    <i class="fa-solid fa-utensils"></i>
+                    <h3><%- voeding[i].type %></h3>
                 </section>
+                <p><%- voeding[i].text %></p>
             </label>
         </div>
-        <div class="results-groente">
-            <input type="checkbox" name="groente">
 
-            <label for="groente" name="groente">
-                <section>
-                    <h3>Minuten beweging</h3>
-                </section>
-            </label>
-        </div>
-        <div class="results-groente">
+        <% } %>
 
-            <input type="checkbox" name="groente">
-            <label for="groente" name="groente">
+        <% for(let i=0; i < beweging.length; i++){ %>
+        <div class="results-beweging">
+            <input type="checkbox" name="beweging">
+            <label for="beweging" name="beweging">
                 <section>
-                    <h3>Minuten beweging</h3>
+                    <i class="fa solid fa-person-walking"></i>
+                    <h3><%- beweging[i].type %></h3>
                 </section>
+                <p><%- beweging[i].text %></p>
             </label>
         </div>
-        <div class="results-groente">
-            <input type="checkbox" name="groente">
-            <label for="groente" name="groente">
-                <section>
-                    <h3>Minuten beweging</h3>
-                </section>
 
-            </label>
-        </div>
+        <% } %>
+
+
 
     </section>
     <a href="/dashboard">Verder</a>

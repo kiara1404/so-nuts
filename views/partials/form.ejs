@@ -2,6 +2,9 @@
 
     <!-- begin -->
     <fieldset class="show">
+        <legend>
+            <h3><%- personal.description%></h3>
+        </legend>
         <p>Om te beginnen met SO NUTS, is het nodig om een aantal vragen te beantwoorden zodat wij gepaste hulp kunnen
             aanbieden.</p>
         <label for="name">Naam</label>
@@ -9,77 +12,132 @@
     </fieldset>
     <!-- persoonsgegevens-->
     <fieldset id="form_personal">
-        <label for="<%- questions[2].id %>"><%- questions[2].text %></label>
-        <input type="text" name="<%- questions[2].id %>" placeholder="Nederland">
-        <label for="<%- questions[3].id %>"><%- questions[3].text %></label>
-        <input type="text" name="<%- questions[3].id %>" placeholder="Nederland">
-        <label for="<%- questions[4].id %>"><%- questions[4].text %></label>
-        <input type="text" name="<%- questions[4].id %>" placeholder="Nederland">
-        <h3><%- questions[5].text %></h3>
+        <legend>
+            <h3><%- personal.description%></h3>
+        </legend>
+        <label for="<%- personal.questions[7].id %>"><%- personal.questions[7].text %></label>
+        <input type="text" name="<%- personal.questions[7].id %>" placeholder="Nederland">
+        <label for="<%- personal.questions[12].id %>"><%- personal.questions[12].text %></label>
+        <input type="text" name="<%- personal.questions[12].id %>" placeholder="Nederland">
+        <label for="<%- personal.questions[4].id %>"><%- personal.questions[4].text %></label>
+        <input type="text" name="<%- personal.questions[4].id %>" placeholder="Nederland">
+        <h3><%- personal.questions[6].text %></h3>
 
         <select>
-            <% for(let i = 0; i < questions[5].answerOptions.length; i++) { %>
-            <option value="" id="<%- questions[5].answerOptions[i].id %>"><%- questions[5].answerOptions[i].text %>
+            <% for(let i = 0; i < personal.questions[6].answerOptions.length; i++) { %>
+            <option value="" id="<%- personal.questions[6].answerOptions[i].id %>">
+                <%- personal.questions[6].answerOptions[i].text %>
             </option>
             <% } %>
-
-
         </select>
 
     </fieldset>
     <!-- arbeids positie-->
     <fieldset id="form_arbeidspositie">
-        <label>Heeft u kinderen?</label>
+        <legend>
+            <h3><%- personal.description%></h3>
+        </legend>
+        <label for="<%- personal.questions[2].id %>"><%- personal.questions[2].text %></label>
+        <% for(let i = 0; i < personal.questions[2].answerOptions.length; i++) { %>
         <div>
-            <input type="radio" name="kids" id="ja" value="ja">
-            <label for="kids">Ja</label>
+            <input type="radio" name="<%- personal.questions[2].id %>"
+                value="<%- personal.questions[2].answerOptions[i].text %>">
+            <label for="<%- personal.questions[2].id %>"><%- personal.questions[2].answerOptions[i].text %></label>
         </div>
-        <div>
-            <input type="radio" name="kids" id="Nee" value="Nee">
-            <label for="kids">Nee</label>
-        </div>
+        <% } %>
 
-        <label>Wat is de hoogste opleiding die u heeft afgerond</label>
+
+        <label id="<%- personal.questions[8].text %>"><%- personal.questions[8].text %></label>
         <select>
-            <option value="vmbo">VMBO</option>
-            <option value="vmbo">VMBO</option>
-            <option value="vmbo">VMBO</option>
-            <option value="vmbo">VMBO</option>
-            <option value="vmbo">VMBO</option>
+            <% for(let i = 0; i < personal.questions[8].answerOptions.length; i++) { %>
+            <option value="<%- personal.questions[8].answerOptions[i].text %>"
+                id="<%- personal.questions[8].answerOptions[i].id %>">
+                <%- personal.questions[8].answerOptions[i].text %>
+            </option>
+            <% } %>
         </select>
 
-        <label>Wat is uw arbeidspositie?</label>
+        <label id="<%- personal.questions[10].text %>"><%- personal.questions[10].text %></label>
         <select>
-            <option value="vmbo">Student</option>
-            <option value="vmbo">Werkend deeltijd</option>
-            <option value="vmbo">Werkend voltijd</option>
-            <option value="vmbo">Gepensioneerd</option>
-
+            <% for(let i = 0; i < personal.questions[10].answerOptions.length; i++) { %>
+            <option value="<%- personal.questions[10].text %>" id="<%- personal.questions[10].answerOptions[i].id %>">
+                <%- personal.questions[10].answerOptions[i].text %>
+            </option>
+            <% } %>
         </select>
+
     </fieldset>
 
     <!-- BMI gegevens -->
     <fieldset id="form_bmi">
-        <label for="age">Wat is uw leeftijd? </label>
-        <input type="number" email="age">
-        <h3>Wat is uw geslacht?</h3>
+        <legend>
+            <h3><%- personal.description%></h3>
+        </legend>
+        <label for="<%- personal.questions[13].id %>"><%- personal.questions[13].text %></label>
+        <input type="number" name="<%- personal.questions[13].id %>">
+
+        <label for="<%- personal.questions[11].id %>"><%- personal.questions[11].text %></label>
+
+        <% for(let i = 0; i < personal.questions[11].answerOptions.length; i++) { %>
         <div>
-            <input type="radio" name="gender" id="male" value="male">
-            <label for="male">Man</label>
+            <input type="radio" name="<%- personal.questions[11].id %>"
+                value="<%- personal.questions[11].answerOptions[i].text %>">
+            <label for="<%- personal.questions[11].id %>"><%- personal.questions[11].answerOptions[i].text %></label>
         </div>
-        <div>
-            <input type="radio" name="gender" id="female" value="female">
-            <label for="female">Vrouw</label>
-        </div>
-        <div>
-            <input type="radio" name="gender" id="nonBinair" value="nonBinair">
-            <label for="nonBinair">Non-binair</label>
-        </div>
-        <label for="height">Wat is uw lengte in cm? </label>
-        <input type="number" name="height">
-        <label for="weight">Wat is uw gewicht in kg?</label>
-        <input type="number" email="weight">
+        <% } %>
+
+        <label for="<%- personal.questions[9].id %>"><%- personal.questions[9].text %>
+            <span><%- personal.questions[9].description %></span></label>
+        <input type="number" name="<%- personal.questions[9].id %>">
+
+        <label for="<%- personal.questions[5].id %>"><%- personal.questions[5].text %>
+            <span><%- personal.questions[5].description %></span></label>
+        <input type="number" name="<%- personal.questions[5].id %>">
+
     </fieldset>
+
+    <!-- Vragen beweging -->
+    <fieldset id="form_beweging">
+        <legend>
+            <h3><%- beweging.description %></h3>
+        </legend>
+        <label for="<%- beweging.questions[0].id %>"><%- beweging.questions[0].text %></label>
+        <input type="number" id="<%- beweging.questions[0].id %>">
+
+        <label for="<%- beweging.questions[1].id %>"><%- beweging.questions[1].text %></label>
+        <% for(let i = 0; i < beweging.questions[1].answerOptions.length; i++) { %>
+        <div>
+            <input type="radio" name="<%- beweging.questions[1].id %>"
+                value="<%- beweging.questions[1].answerOptions[i].text %>">
+            <label for="<%- beweging.questions[1].id %>"><%- beweging.questions[1].answerOptions[i].text %></label>
+        </div>
+        <% } %>
+
+        <label for="<%- beweging.questions[2].id %>"><%- beweging.questions[2].text %></label>
+        <input type="number" id="<%- beweging.questions[2].id %>">
+
+        <label for="<%- beweging.questions[3].id %>"><%- beweging.questions[3].text %></label>
+        <input type="number" id="<%- beweging.questions[3].id %>">
+    </fieldset>
+
+
+    <!-- Vragen voeding -->
+    <fieldset id="form_beweging">
+        <legend>
+            <h3><%- voeding.description %></h3>
+        </legend>
+        <label for="<%- voeding.questions[0].id %>"><%- voeding.questions[0].text %></label>
+        <select>
+            <% for(let i = 0; i < voeding.questions[0].answerOptions.length; i++) { %>
+            <option value="<%- voeding.questions[0].text %>" id="<%- voeding.questions[0].answerOptions[i].id %>">
+                <%- voeding.questions[0].answerOptions[i].text %>
+            </option>
+            
+            <% } %>
+      </select>
+           
+    </fieldset>
+
 
     <button type="submit" id="form-submit">Afronden</button>
     <button class="btn-next hide" type="button">Volgende</button>
