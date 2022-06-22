@@ -2,14 +2,15 @@ console.log('are we connected?');
 const form = document.querySelector('#form form');
 const nextButtons = document.querySelectorAll('.btn-next');
 const nextBtn = document.querySelector('.btn-next');
-const submitBtn = document.querySelector('#form-submit');
-const fieldset = document.querySelectorAll('#form fieldset')
+const submitBtn = document.querySelector('.form-submit');
+let fieldset = document.querySelectorAll('#form fieldset')
 const formProgress = document.querySelector('#form .progressBar');
-const trainingPage = document.querySelector('.training')
-const buttons = document.querySelector('.buttons')
-const addBtn = document.querySelector('.add-btn')
-const dashboardPage = document.querySelector('.dashboard')
-const voedingPage = document.querySelector('.voeding')
+const trainingPage = document.querySelector('.training');
+const buttons = document.querySelector('.buttons');
+const addBtn = document.querySelector('.add-btn');
+const dashboardPage = document.querySelector('.dashboard');
+const voedingPage = document.querySelector('.voeding');
+const resultsPage = document.querySelector('.results')
 let i = 1
 
 
@@ -22,9 +23,25 @@ function addClass(element, className) {
 function deleteClass(element, className) {
     element.classList.remove(className);
 }
-console.log(fieldset.length)
 
 
+function showSubmitBtn() {
+    if (i >= fieldset.length) {
+        submitBtn.classList.remove('hide');
+        nextBtn.classList.add('hide');
+    }
+}
+
+function updateFormSteps() {
+    document.querySelector(`fieldset:nth-of-type(${i})`).classList.add('hide');
+    document.querySelector(`fieldset:nth-of-type(${i})`).classList.remove('show');
+    i++;
+    console.log('i =', i);
+    document.querySelector(`fieldset:nth-of-type(${i})`).classList.add('show');
+
+    showSubmitBtn();
+
+}
 // FORM
 // when JS is enabled
 if (form) {
@@ -42,24 +59,9 @@ if (form) {
 
     }));
 
-    function updateFormSteps() {
 
-        document.querySelector(`fieldset:nth-of-type(${i})`).classList.add('hide');
-        document.querySelector(`fieldset:nth-of-type(${i})`).classList.remove('show');
-        i++;
-        console.log('i =', i);
-        document.querySelector(`fieldset:nth-of-type(${i})`).classList.add('show');
 
-        showSubmitBtn();
 
-    }
-
-    function showSubmitBtn() {
-        if (i >= fieldset.length) {
-            submitBtn.classList.remove('hide');
-            nextBtn.classList.add('hide');
-        }
-    }
 
 
     function updateProgressBar() {
@@ -75,8 +77,8 @@ if (form) {
 if (trainingPage) {
     const currTrainingGoal = document.querySelector('#total_goal').innerHTML;
     const currTrainingVal = document.querySelector('#total_min').innerHTML;
-        goalAchieved(2, 'container', currTrainingVal);
-    
+    goalAchieved(2, 'container', currTrainingVal);
+
 
     addClass(buttons, 'hide')
     addBtn.addEventListener('click', () => {
@@ -152,3 +154,26 @@ function goalAchieved(x, el, value) {
     }
 }
 
+if (resultsPage) {
+    const checkmarks = document.querySelectorAll('.results .checkmark i')
+    fieldset = document.querySelectorAll('.results fieldset');
+    addClass(fieldset[1], 'hide');
+    addClass(submitBtn, 'hide');
+    deleteClass( nextBtn, 'hide');
+    console.log(fieldset.length, i)
+
+    nextBtn.addEventListener('click', () => {
+        document.querySelector(`fieldset:nth-of-type(${i})`).classList.add('hide');
+        i++;
+        console.log('i =', i);
+        document.querySelector(`fieldset:nth-of-type(${i})`).classList.remove('hide');
+        document.querySelector(`fieldset:nth-of-type(${i})`).classList.add('show');
+    
+        showSubmitBtn()
+    })
+    addClass(checkmarks[2], 'goal_achieved');
+    addClass(checkmarks[4], 'goal_achieved');
+
+
+
+}

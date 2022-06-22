@@ -4,39 +4,46 @@
     <p>Hieronder zijn de resultaten van het intake formulier.</p>
     <p>Kies maximaal drie onderwerpen waar u aan wil werken.</p>
     <section class="wrapper">
-
-        <% for(let i=0; i < voeding.length; i++){ %>
-        <div class="results-voeding">
-            <input type="checkbox" name="voeding">
-            <label for="voeding" name="voeding">
-                <section>
-                    <i class="fa-solid fa-utensils"></i>
-                    <h3><%- voeding[i].type %></h3>
-                </section>
-                <p><%- voeding[i].text %></p>
-            </label>
-        </div>
-
-        <% } %>
-
-        <% for(let i=0; i < beweging.length; i++){ %>
-        <div class="results-beweging">
-            <input type="checkbox" name="beweging">
-            <label for="beweging" name="beweging">
-                <section>
-                    <i class="fa solid fa-person-walking"></i>
-                    <h3><%- beweging[i].type %></h3>
-                </section>
-                <p><%- beweging[i].text %></p>
-            </label>
-        </div>
-
-        <% } %>
+        <form action="/dashboard" method="POST">
+            <fieldset>
+                <% for(let i=0; i < voeding.length; i++){ %>
+                <div class="results-voeding">
+                    <input type="checkbox" name="voeding">
+                    <label for="voeding" name="voeding">
+                        <section>
+                            <i class="fa-solid fa-utensils"></i>
+                            <h3><%- voeding[i].type %></h3>
+                        </section>
+                        <p><%- voeding[i].text %></p>
+                    </label>
+                    <%- include('../partials/checkmark.ejs') %>
+                </div>
+                <% } %>
+            </fieldset>
 
 
+            <fieldset>
+                <% for(let i=0; i < beweging.length; i++){ %>
 
+                <div class="results-beweging">
+                    <input type="checkbox" name="beweging">
+                    <label for="beweging" name="beweging">
+                        <section>
+                            <i class="fa solid fa-person-walking"></i>
+                            <h3><%- beweging[i].type %></h3>
+                        </section>
+                        <p><%- beweging[i].text %></p>
+                    </label>
+                    <%- include('../partials/checkmark.ejs') %>
+                </div>
+
+                <% } %>
+            </fieldset>
+            <button type="submit" class="form-submit">Verder</button>
+            <button class="btn-next hide" type="button">Verder</button>
+        </form>
     </section>
-    <a href="/dashboard">Verder</a>
+
 </main>
 
 <%- include('../partials/footer.ejs') %>

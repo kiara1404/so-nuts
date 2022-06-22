@@ -21,6 +21,21 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
     res.render('pages/index')
 })
+app.get('/results', (req, res) => {
+    fs.readFile('public/json/recommendations.json', 'utf-8', function (err, data) {
+        if (err) throw err;
+        let formData;
+        if (data) {
+            formData = JSON.parse(data)
+            console.log(formData)
+        }
+        res.render('pages/results', {
+            voeding: formData.recommendations.voeding,
+            beweging: formData.recommendations.beweging
+        })
+    });
+});
+
 
 //questionnaire
 app.get('/form_1', getData)
