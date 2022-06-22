@@ -6,8 +6,9 @@ const submitBtn = document.querySelector('#form-submit');
 const fieldset = document.querySelectorAll('#form fieldset')
 const progress = document.querySelector('#form .progressBar');
 const training = document.querySelector('.training')
-const trainingBtns = document.querySelector('.buttons')
-const addTrainingBtn = document.querySelector('#add-training-btn')
+const buttons = document.querySelector('.buttons')
+const addBtn = document.querySelector('.add-btn')
+const voeding = document.querySelector('.voeding')
 let i = 1
 
 
@@ -71,10 +72,18 @@ if (form) {
 // END FORM
 
 if (training) {
-    addClass(trainingBtns, 'hide')
-    addTrainingBtn.addEventListener('click', () => {
-        deleteClass(trainingBtns, 'hide')
+    addClass(buttons, 'hide')
+    addBtn.addEventListener('click', () => {
+        deleteClass(buttons, 'hide')
     })
+}
+
+if (voeding) {
+    addClass(buttons, 'hide')
+    addBtn.addEventListener('click', () => {
+        deleteClass(buttons, 'hide')
+    })
+
 }
 // add training
 // function addValues(a,b){

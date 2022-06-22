@@ -1,0 +1,15 @@
+<%- include('../partials/head.ejs') %>
+<main class="add_voeding">
+    <h2>Calorieën</h2>
+    <form method="POST" action="/added_kcal" class="hide_form">
+
+        <label for="kcal">Hoeveel calorieën wil u toevoegen?</label>
+        <input type="number" name="kcal" id="add_kcal" placeholder="310">
+        <button type="submit">Toevoegen</button>
+
+    </form>
+    <%- include('../partials/nav.ejs') %>
+</main>
+
+
+<%- include('../partials/footer.ejs') %>

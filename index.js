@@ -21,7 +21,11 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
     res.render('pages/index')
 })
+
+//questionnaire
 app.get('/form_1', getData)
+
+//dashboard
 app.get('/dashboard', (req, res) => {
     const files = ['public/json/cardio.json', 'public/json/kracht.json'];
     async.map(files, fs.readFile, function (err, data) {
@@ -40,6 +44,8 @@ app.get('/dashboard', (req, res) => {
     })
 });
 
+
+// training page
 app.get('/training', (req, res) => {
     const files = ['public/json/cardio.json', 'public/json/kracht.json'];
     async.map(files, fs.readFile, function (err, data) {
@@ -53,14 +59,33 @@ app.get('/training', (req, res) => {
         res.render('pages/training', {
             cardioData: cardioData,
             krachtData: krachtData,
-            cardioType: stringDataCardio
+            cardioType: stringDataCardio.trainingType
         })
     })
 
 })
 
+// voeding page
 app.get('/voeding', (req, res) => {
-    res.render('pages/voeding')
+    const files = ['public/json/kcal.json', 'public/json/eiwitten.json', 'public/json/groente.json'];
+    async.map(files, fs.readFile, function (err, data) {
+        let stringDataKcal = JSON.parse(data[0]);
+        let stringDataEiwitten = JSON.parse(data[1]);
+        let stringDataGroente = JSON.parse(data[2]);
+
+        let kcalData = parseInt(stringDataKcal.kcal);
+        let eiwitData = parseInt(stringDataEiwitten.eiwitten);
+        let groenteData = parseInt(stringDataGroente.groente);
+
+        console.log(kcalData)
+      //  console.log(krachtData)
+
+        res.render('pages/voeding', {
+            kcalData: kcalData,
+            eiwitData: eiwitData,
+            groenteData: groenteData
+        });
+    });
 });
 app.get('/results', (req, res) => {
     fs.readFile('public/json/recommendations.json', 'utf8', function (err, data) {
@@ -77,15 +102,23 @@ app.get('/results', (req, res) => {
     });
 });
 
-app.get('/add_training', (req, res) => {
-    res.render('pages/add_training')
-});
+
 app.get('/form_cardio', (req, res) => {
     res.render('pages/form_cardio')
 });
 app.get('/form_kracht', (req, res) => {
     res.render('pages/form_kracht')
 });
+app.get('/form_kcal', (req, res) => {
+    res.render('pages/form_kcal')
+});
+app.get('/form_eiwitten', (req, res) => {
+    res.render('pages/form_eiwitten')
+});
+app.get('/form_groente', (req, res) => {
+    res.render('pages/form_groente')
+});
+
 
 // POST
 app.post('/form_1', getData);
@@ -134,12 +167,76 @@ app.post('/added_kracht', (req, res) => {
     res.redirect('training')
 })
 
+app.post('/added_groente', (req, res) => {
+    let stringData;
+    const data = {
+      "groente": req.body.groente
+    }
+    stringData = JSON.stringify(data);
+    console.log(stringData);
+
+
+    fs.writeFile('public/json/groente.json', stringData, (err, data) => {
+        if (data) {
+            stringData = JSON.parse(data)
+        }
+        if (err) {
+            console.log(err)
+        }
+    });
+    res.redirect('voeding')
+})
+
+app.post('/added_eiwitten', (req, res) => {
+    let stringData;
+    const data = {
+        "eiwitten": req.body.eiwitten
+    }
+    stringData = JSON.stringify(data);
+    console.log(stringData);
+
+
+    fs.writeFile('public/json/eiwitten.json', stringData, (err, data) => {
+        if (data) {
+            stringData = JSON.parse(data)
+        }
+        if (err) {
+            console.log(err)
+        }
+    });
+    res.redirect('voeding')
+})
+
+app.post('/added_kcal', (req, res) => {
+    let stringData;
+    const data = {
+        "kcal": req.body.kcal
+    }
+    stringData = JSON.stringify(data);
+    console.log(stringData);
+
+
+    fs.writeFile('public/json/kcal.json', stringData, (err, data) => {
+        if (data) {
+            stringData = JSON.parse(data)
+        }
+        if (err) {
+            console.log(err)
+        }
+    });
+    res.redirect('voeding')
+})
+
+
+
 
 // server
 app.listen(port, () =>
     console.log(`Server is running succesfully👋!`),
 );
 
+
+// get questions from API
 async function getData(req, res) {
     try {
 

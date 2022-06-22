@@ -1,0 +1,15 @@
+<%- include('../partials/head.ejs') %>
+<main class="add_voeding">
+    <h2>Eiwitten</h2>
+    <form method="POST" action="/added_eiwitten" class="hide_form">
+
+        <label for="eiwitten">Hoeveel gram eiwitten  had uw maaltijd?</label>
+        <input type="number" name="eiwitten" id="add_eiwitten" placeholder="20">
+        <button type="submit">Toevoegen</button>
+
+    </form>
+    <%- include('../partials/nav.ejs') %>
+</main>
+
+
+<%- include('../partials/footer.ejs') %>

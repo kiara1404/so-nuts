@@ -1,0 +1,15 @@
+<%- include('../partials/head.ejs') %>
+<main class="add_voeding">
+    <h2>Groente</h2>
+    <form method="POST" action="/added_groente" class="hide_form">
+
+        <label for="groente">Hoeveel gram groente had uw maaltijd?</label>
+        <input type="number" name="groente" id="add_groente" placeholder="100">
+        <button type="submit">Toevoegen</button>
+
+    </form>
+    <%- include('../partials/nav.ejs') %>
+</main>
+
+
+<%- include('../partials/footer.ejs') %>

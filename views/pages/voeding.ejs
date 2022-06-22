@@ -11,27 +11,47 @@
     <div class="wrapper">
         <div class="container-s">
             <section>
+
                 <h3>Groente (g)</h3>
             </section>
-            <p><span>170</span>/200</p>
-    
+            <%   if(groenteData) { %>
+            <p><span><%= groenteData %></span>/200</p>
+            <% } else { %>
+            <p><span>0</span>/200</p>
+            <% } %>
+
         </div>
-    
+
         <div class="container-s">
             <section>
                 <h3>Eiwitten (g)</h3>
             </section>
-            <p><span>30</span>/60</p>
-    
+            <%   if(eiwitData) { %>
+            <p><span><%= eiwitData %></span>/60</p>
+            <% } else { %>
+            <p><span>0</span>/60</p>
+            <% } %>
+
         </div>
         <div class="container-s">
             <section>
                 <h3>Dagelijkse kcal</h3>
             </section>
-            <p><span>1200</span>/2000</p>
+                <%   if(kcalData) { %>
+                <p><span><%= kcalData %></span>/2000</p>
+                <% } else { %>
+                <p><span>0</span>/2000</p>
+                <% } %>
         </div>
     </div>
-    <button class="btn-secondary">Voeg gegevens toe</button>
+    <button class="btn-secondary add-btn">Voeg gegevens toe</button>
+    <div class="btn_wrapper">
+        <div class="buttons">
+            <a href="/form_kcal" id="kcal">Calorieën</a>
+            <a href="/form_eiwitten" id="eiwitten">Eiwitten</a>
+            <a href="/form_groente" id="groente">Groente</a>
+        </div>
+    </div>
 
     <%- include('../partials/nav.ejs') %>
 </main>
