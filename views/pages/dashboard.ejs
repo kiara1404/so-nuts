@@ -15,70 +15,76 @@
     </section>
     </div>
     <div class="container">
-        <section>
-            <i class="fa-solid fa-person-running"></i>
-            <h3>Minuten beweging</h3>
-        </section>
-        <div class="pbContainer">
-            <div class="progressBar"></div>
-        </div>
-        <div>
-            <% let totalMin = cardioData + krachtData %>
-            <% if(cardioData && krachtData) { %>
-            <p>
-                <span id="beweging_value">
-                    <%= totalMin %>
-                </span>/week
-            </p>
-            <% } %>
-            <ul>
-                <li>vandaag: 0</li>
-                <li>doel: <span id="beweging_goal"> 150</span></li>
-            </ul>
-        </div>
-        <%- include('../partials/checkmark.ejs') %>
+        <a href="/training">
+            <section>
+                <i class="fa-solid fa-person-running"></i>
+                <h3>Minuten beweging</h3>
+            </section>
+            <div class="pbContainer">
+                <div class="progressBar"></div>
+            </div>
+            <div>
+                <% let totalMin = cardioData + krachtData %>
+                <% if(cardioData && krachtData) { %>
+                <p>
+                    <span id="beweging_value">
+                        <%= totalMin %>
+                    </span>/week
+                </p>
+                <% } %>
+                <ul>
+                    <li>vandaag: 0</li>
+                    <li>doel: <span id="beweging_goal"> 150</span></li>
+                </ul>
+            </div>
+            <%- include('../partials/checkmark.ejs') %>
+        </a>
     </div>
 
     <div class="container">
-        <section id="dashboard_kcal">
-            <i class="fa-solid fa-utensils"></i>
-            <h3>Voeding</h3>
-        </section>
-        <div class="pbContainer">
-            <div class="progressBar"></div>
-        </div>
-        <article>
-            <%   if(kcalData) { %>
-            <p><span class="kcal_value"><%= kcalData %></span>/ <span class="kcal_goal">2000</span> calorieën</p>
-            <% } else { %>
-            <p><span>0</span>/2000</p>
-            <% } %>
+        <a href="/voeding">
+            <section id="dashboard_kcal">
+                <i class="fa-solid fa-utensils"></i>
+                <h3>Voeding</h3>
+            </section>
+            <div class="pbContainer">
+                <div class="progressBar"></div>
+            </div>
+            <article>
+                <%   if(kcalData) { %>
+                <p><span class="kcal_value"><%= kcalData %></span>/ <span class="kcal_goal">2000</span> calorieën</p>
+                <% } else { %>
+                <p><span>0</span>/2000</p>
+                <% } %>
 
-            <%   if(eiwitData) { %>
-            <p><span class="eiwit_value"><%= eiwitData %></span>/ <span class="eiwit_goal">60</span> gram</p>
-            <% } else { %>
-            <p><span>0</span>/60</p>
-            <% } %>
+                <%   if(eiwitData) { %>
+                <p><span class="eiwit_value"><%= eiwitData %></span>/ <span class="eiwit_goal">60</span> gram</p>
+                <% } else { %>
+                <p><span>0</span>/60</p>
+                <% } %>
 
-            <%   if(groenteData) { %>
-            <p><span class="groente_value"><%= groenteData %></span>/ <span class="groente_goal">200</span> gram</p>
-            <% } else { %>
-            <p><span>0</span>/200</p>
-            <% } %>
+                <%   if(groenteData) { %>
+                <p><span class="groente_value"><%= groenteData %></span>/ <span class="groente_goal">200</span> gram</p>
+                <% } else { %>
+                <p><span>0</span>/200</p>
+                <% } %>
 
-        </article>
-                <%- include('../partials/checkmark.ejs') %>
+            </article>
+            <%- include('../partials/checkmark.ejs') %>
+        </a>
     </div>
 
     <div class="container">
-        <section id="weight">
-            <i class="fa-solid fa-chart-simple"></i>
-            <h3>Progressie</h3>
-        </section>
-        <article>
-            <i class="fa-solid fa-utensils fa-xl"></i>
-            <p>Probeer vandaag meer eiwitten binnen te krijgen.</p>
-        </article>
+        <a href="/progressie">
+            <section id="weight">
+                <i class="fa-solid fa-chart-simple"></i>
+                <h3>Progressie</h3>
+            </section>
+            <article>
+                <i class="fa-solid fa-utensils fa-xl"></i>
+                <p>Je hebt afgelopen week meer groente gegeten. Ga zo door!</p>
+            </article>
+        </a>
     </div>
 
 

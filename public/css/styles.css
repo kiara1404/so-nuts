@@ -425,7 +425,10 @@ input[type="submit"]{
     margin-left: 19.5rem;
     margin-top: -0.1rem;
 }
-
+.dashboard a {
+    text-decoration: none;
+    color: #fff;
+}
 .goal_achieved{
     color: #51A34B !important;
 }
