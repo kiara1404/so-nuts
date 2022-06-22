@@ -582,6 +582,11 @@ background-color: var(--main-purple)
     margin: 1.1rem 0 0 3rem;
     font-size: 18px !important;
     text-align: center;
+    width: 40%;
+}
+.cardio_training #cardio_container div{
+    display: flex;
+    justify-content: space-evenly;
 }
 .cardio_training .container p:first-of-type span{
     font-size: 2rem;
@@ -596,6 +601,7 @@ background-color: var(--main-purple)
     text-transform: uppercase;
     font-style: italic;
     margin: 2rem 2rem 1rem 2rem;
+    width: 40%;
 }
 .cardio_training .heading i{
     font-size: 1.5rem;
