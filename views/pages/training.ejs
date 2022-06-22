@@ -14,14 +14,15 @@
         </section>
         <% let totalMin = cardioData + krachtData %>
         <% if(cardioData && krachtData) { %>
-        <p><span id="totalMin">
+        <p><span id="total_min">
                 <%= totalMin %>
-            </span>/150</p>
+            </span>/ <span id="total_goal">150</span> </p>
         <% } else { %>
-        <p><span id="totalMin">
+        <p><span id="total_min">
                 0
-            </span>/150</p>
+            </span>/<span id="total_goal">150</span></p>
         <% } %>
+        <%- include('../partials/checkmark.ejs') %>
     </div>
     <div class="wrapper">
 

@@ -412,8 +412,8 @@ input[type="submit"]{
    font-size: 2rem;
 }
 
-.dashboard #kcal_goal, #eiwit_goal, #groente_goal{
-    font-size: 1.1rem;
+.dashboard .kcal_goal,.dashboard  .eiwit_goal, .dashboard  .groente_goal{
+    font-size: 1.1rem !important;
 }
 
 .dashboard .checkmark i{
@@ -553,9 +553,16 @@ background-color: var(--main-purple)
     font-style: italic;
     font-weight: 400;
 
+}
+.training .container .checkmark{
+    margin-top: -1rem;
 
 }
-
+.training .container .checkmark i{
+    margin: -2rem 2rem 0 19.7rem;
+    font-size: 1.7rem;
+    color: rgb(75, 75, 75);
+}
 
 
 
@@ -669,7 +676,24 @@ background-color: var(--main-purple)
     font-size: 18px;
 }
 
+.voeding .container-s:nth-child(1) .checkmark i, .voeding .container-s:nth-child(2) .checkmark i{
+    font-size: 1.7rem;
+    color: rgb(75, 75, 75);
+     margin: 0.2rem 0 0 8.2rem;
+}
 
+.voeding .container-s:nth-child(3) .checkmark{
+    margin-top: -1rem;
+}
+.voeding .container-s:nth-child(3) .checkmark i{
+    margin: -5rem 0 0 20rem;
+    font-size: 1.7rem;
+    color: rgb(75, 75, 75);
+    padding-top: -2rem;
+}
+.voeding .kcal_goal, .voeding .eiwit_goal, .voeding .groente_goal{
+    font-size: 1.2rem !important;
+}
 
 /* resultaten */
 

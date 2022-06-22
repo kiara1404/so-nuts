@@ -5,14 +5,12 @@ const nextBtn = document.querySelector('.btn-next');
 const submitBtn = document.querySelector('#form-submit');
 const fieldset = document.querySelectorAll('#form fieldset')
 const formProgress = document.querySelector('#form .progressBar');
-const training = document.querySelector('.training')
+const trainingPage = document.querySelector('.training')
 const buttons = document.querySelector('.buttons')
 const addBtn = document.querySelector('.add-btn')
-const voeding = document.querySelector('.voeding')
-const dashboard = document.querySelector('.dashboard')
+const dashboardPage = document.querySelector('.dashboard')
+const voedingPage = document.querySelector('.voeding')
 let i = 1
-
-
 
 
 // adds class to element
@@ -73,43 +71,68 @@ if (form) {
 }
 // END FORM
 
-if (training) {
+if (trainingPage) {
+    const currTrainingGoal = document.querySelector('#total_goal').innerHTML;
+    const currTrainingVal = document.querySelector('#total_min').innerHTML;
+        goalAchieved(2, 'container', currTrainingVal);
+    
+
     addClass(buttons, 'hide')
     addBtn.addEventListener('click', () => {
         deleteClass(buttons, 'hide')
     })
 }
 
-if (voeding) {
-    addClass(buttons, 'hide')
-    addBtn.addEventListener('click', () => {
-        deleteClass(buttons, 'hide')
-    })
-
-}
-
-if (dashboard) {
-    let progress;
-    const kcalValue = document.querySelector('#kcal_value').innerHTML;
-    const eiwitValue = document.querySelector('#eiwit_value').innerHTML;
-    const groenteValue = document.querySelector('#groente_value').innerHTML;
-    const kcalGoal = document.querySelector('#kcal_goal').innerHTML;
-    const eiwitGoal = document.querySelector('#eiwit_goal').innerHTML;
-    const groenteGoal = document.querySelector('#groente_goal').innerHTML;
+if (voedingPage) {
+    const kcalValue = document.querySelector('.kcal_value').innerHTML;
+    const eiwitValue = document.querySelector('.eiwit_value').innerHTML;
+    const groenteValue = document.querySelector('.groente_value').innerHTML;
+    const kcalGoal = document.querySelector('.kcal_goal').innerHTML;
+    const eiwitGoal = document.querySelector('.eiwit_goal').innerHTML;
+    const groenteGoal = document.querySelector('.groente_goal').innerHTML;
     const currKcalGoal = kcalValue / kcalGoal;
     const currEiwitGoal = eiwitValue / eiwitGoal;
-    const currGroeteGoal = groenteValue / groenteGoal;
-    const voedselAverage = (currKcalGoal + currEiwitGoal + currGroeteGoal) / 3 * 100;
+    const currGroenteGoal = groenteValue / groenteGoal;
+    const voedselAverage = (currKcalGoal + currEiwitGoal + currGroenteGoal) / 3 * 100;
+
+
+    addClass(buttons, 'hide')
+    addBtn.addEventListener('click', () => {
+        deleteClass(buttons, 'hide')
+    })
+    goalAchieved(1, 'container-s', currGroenteGoal * 100)
+    goalAchieved(2, 'container-s', currEiwitGoal * 100)
+    goalAchieved(3, 'container-s', currKcalGoal * 100)
+
+
+
+}
+
+if (dashboardPage) {
+    let progress;
+    const kcalValue = document.querySelector('.kcal_value').innerHTML;
+    const eiwitValue = document.querySelector('.eiwit_value').innerHTML;
+    const groenteValue = document.querySelector('.groente_value').innerHTML;
+    const kcalGoal = document.querySelector('.kcal_goal').innerHTML;
+    const eiwitGoal = document.querySelector('.eiwit_goal').innerHTML;
+    const groenteGoal = document.querySelector('.groente_goal').innerHTML;
+    const currKcalGoal = kcalValue / kcalGoal;
+    const currEiwitGoal = eiwitValue / eiwitGoal;
+    const currGroenteGoal = groenteValue / groenteGoal;
+    const voedselAverage = (currKcalGoal + currEiwitGoal + currGroenteGoal) / 3 * 100;
+
+
 
     voedingProgressBar();
     bewegingProgressBar();
-    goalAchieved(1, document.querySelector('#beweging_value').innerHTML);
-    goalAchieved(2, (voedselAverage))
+    goalAchieved(1, 'container', document.querySelector('#beweging_value').innerHTML);
+    goalAchieved(2, 'container', (voedselAverage))
 
-
-
-
-
+    function voedingProgressBar() {
+        progress = document.querySelector('.dashboard .container:nth-of-type(2) .progressBar');
+        progress.style.width = voedselAverage + '%';
+    }
+}
 
 
 function bewegingProgressBar() {
@@ -121,17 +144,11 @@ function bewegingProgressBar() {
     progress.style.width = width;
 }
 
-function goalAchieved(x, value) {
-    const checkmark = document.querySelector(`.container:nth-of-type(${x}) .checkmark i`);
+function goalAchieved(x, el, value) {
+    const checkmark = document.querySelector(`.${el}:nth-of-type(${x}) .checkmark i`);
     console.log(value)
     if (value >= 100) {
         addClass(checkmark, 'goal_achieved');
     }
 }
 
-function voedingProgressBar() {
-    progress = document.querySelector('.dashboard .container:nth-of-type(2) .progressBar');
-    progress.style.width = voedselAverage + '%';
-}
-
-}
