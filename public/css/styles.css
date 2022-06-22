@@ -594,6 +594,14 @@ background-color: var(--main-purple)
     font-style: italic;
     margin: 2rem 2rem 1rem 2rem;
 }
+.cardio_training .heading i{
+    font-size: 1.5rem;
+    color: var(--main-purple);
+    margin: 3.9rem 0.2rem 0 1rem;
+}
+.cardio_training .heading{
+    display: flex;
+}
 
 
 
