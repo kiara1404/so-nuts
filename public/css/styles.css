@@ -764,6 +764,7 @@ background-color: var(--main-purple)
 .results-voeding input[type="checkbox"],
 .results-beweging input[type="checkbox"]{
     opacity: 0;
+    padding: 2rem;
 }
 
 .results fieldset{
@@ -780,7 +781,11 @@ background-color: var(--main-purple)
     overflow: hidden;
     margin-top: -3rem;
 
+}
 
+.results-voeding input[type="checkbox"]:checked + label,
+.results-beweging input[type="checkbox"]:checked + label{
+    border: 4px solid #b1b1b1;
 }
 
 .results-voeding label section{

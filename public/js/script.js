@@ -159,7 +159,7 @@ if (resultsPage) {
     fieldset = document.querySelectorAll('.results fieldset');
     addClass(fieldset[1], 'hide');
     addClass(submitBtn, 'hide');
-    deleteClass( nextBtn, 'hide');
+    deleteClass(nextBtn, 'hide');
     console.log(fieldset.length, i)
 
     nextBtn.addEventListener('click', () => {
@@ -168,12 +168,24 @@ if (resultsPage) {
         console.log('i =', i);
         document.querySelector(`fieldset:nth-of-type(${i})`).classList.remove('hide');
         document.querySelector(`fieldset:nth-of-type(${i})`).classList.add('show');
-    
+
         showSubmitBtn()
     })
     addClass(checkmarks[2], 'goal_achieved');
     addClass(checkmarks[4], 'goal_achieved');
+    maxCheckboxes();
 
+
+
+}
+
+function maxCheckboxes() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox]');
+    let arr = []
+    checkboxes.forEach(element => {
+        arr.push(element.value)
+    })
+    console.log(arr)
 
 
 }

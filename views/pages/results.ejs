@@ -2,14 +2,15 @@
 <main class="results">
     <h2>Resultaten</h2>
     <p>Hieronder zijn de resultaten van het intake formulier.</p>
-    <p>Kies maximaal drie onderwerpen waar u aan wil werken.</p>
+    <p>Kies maximaal drie doelen waar u aan wil werken.</p>
     <section class="wrapper">
         <form action="/dashboard" method="POST">
             <fieldset>
+
                 <% for(let i=0; i < voeding.length; i++){ %>
                 <div class="results-voeding">
-                    <input type="checkbox" name="voeding">
-                    <label for="voeding" name="voeding">
+                   <input type="checkbox" name="=voeding_<%=[i]%>"> 
+                    <label for="=voeding_<%=[i]%>" name="=voeding_<%=[i]%>">
                         <section>
                             <i class="fa-solid fa-utensils"></i>
                             <h3><%- voeding[i].type %></h3>
@@ -26,8 +27,8 @@
                 <% for(let i=0; i < beweging.length; i++){ %>
 
                 <div class="results-beweging">
-                    <input type="checkbox" name="beweging">
-                    <label for="beweging" name="beweging">
+                    <input type="checkbox" name="beweging_<%=[i]%>">
+                    <label for="beweging_<%=[i]%>" name="beweging_<%=[i]%>">
                         <section>
                             <i class="fa solid fa-person-walking"></i>
                             <h3><%- beweging[i].type %></h3>
