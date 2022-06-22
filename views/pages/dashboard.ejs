@@ -26,20 +26,20 @@
             <% let totalMin = cardioData + krachtData %>
             <% if(cardioData && krachtData) { %>
             <p>
-                <span>
-                   <%= totalMin %>
+                <span id="beweging_value">
+                    <%= totalMin %>
                 </span>/week
             </p>
             <% } %>
             <ul>
                 <li>vandaag: 0</li>
-                <li>doel: 150</li>
+                <li>doel: <span id="beweging_goal"> 150</span></li>
             </ul>
         </div>
     </div>
 
     <div class="container">
-        <section id="kcal">
+        <section id="dashboard_kcal">
             <i class="fa-solid fa-utensils"></i>
             <h3>Voeding</h3>
         </section>
@@ -47,10 +47,23 @@
             <div class="progressBar"></div>
         </div>
         <article>
-            <p><span>1200</span>/2000 calorieën</p>
+            <%   if(kcalData) { %>
+            <p><span class="kcal_value"><%= kcalData %></span>/ <span class="kcal_goal">2000</span> calorieën</p>
+            <% } else { %>
+            <p><span>0</span>/2000</p>
+            <% } %>
 
-            <p><span>30</span>/60g eiwitten</p>
-            <p><span>76</span>/200g groente</p>
+            <%   if(eiwitData) { %>
+            <p><span class="eiwit_value"><%= eiwitData %></span>/ <span class="eiwit_goal">60</span> gram</p>
+            <% } else { %>
+            <p><span>0</span>/60</p>
+            <% } %>
+
+            <%   if(groenteData) { %>
+            <p><span class="groente_value"><%= groenteData %></span>/ <span class="groente_goal">200</span> gram</p>
+            <% } else { %>
+            <p><span>0</span>/200</p>
+            <% } %>
 
         </article>
     </div>

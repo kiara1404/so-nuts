@@ -4,11 +4,12 @@ const nextButtons = document.querySelectorAll('.btn-next');
 const nextBtn = document.querySelector('.btn-next');
 const submitBtn = document.querySelector('#form-submit');
 const fieldset = document.querySelectorAll('#form fieldset')
-const progress = document.querySelector('#form .progressBar');
+const formProgress = document.querySelector('#form .progressBar');
 const training = document.querySelector('.training')
 const buttons = document.querySelector('.buttons')
 const addBtn = document.querySelector('.add-btn')
 const voeding = document.querySelector('.voeding')
+const dashboard = document.querySelector('.dashboard')
 let i = 1
 
 
@@ -65,7 +66,7 @@ if (form) {
     function updateProgressBar() {
         const totalFieldsets = fieldset.length;
         const width = i / totalFieldsets
-        progress.style.width = width * 100 + '%';
+        formProgress.style.width = width * 100 + '%';
 
     }
 }
@@ -85,19 +86,39 @@ if (voeding) {
     })
 
 }
-// add training
-// function addValues(a,b){
+
+if (dashboard) {
+    voedingProgressBar();
+    bewegingProgressBar();
 
 
-// }
+}
 
-// let a = 12
+function bewegingProgressBar() {
+    let progress = document.querySelector('.dashboard .container:nth-of-type(1) .progressBar')
+    const value = document.querySelector('#beweging_value').innerHTML;
+    const goal = document.querySelector('#beweging_goal').innerHTML;
+    const currGoal = value / goal;
+    const width = currGoal * 100 + '%';
+    progress.style.width = width;
 
-// localStorage.setItem('data', a);
-// document.querySelector('.krachtValue').innerHTML = a + ':00'
 
 
-// console.log(localStorage.getItem('data'))
+}
 
-// localStorage.setItem('data', localStorage.getItem('data') + a);
-// console.log(typeof (localStorage.getItem('data')))
+function voedingProgressBar() {
+    let progress = document.querySelector('.dashboard .container:nth-of-type(2) .progressBar')
+    const kcalValue = document.querySelector('.kcal_value').innerHTML;
+    const eiwitValue = document.querySelector('.eiwit_value').innerHTML;
+    const groenteValue = document.querySelector('.groente_value').innerHTML;
+    const kcalGoal = document.querySelector('.kcal_goal').innerHTML;
+    const eiwitGoal = document.querySelector('.eiwit_goal').innerHTML;
+    const groenteGoal = document.querySelector('.groente_goal').innerHTML;
+    const currKcalGoal = kcalValue / kcalGoal;
+    const currEiwitGoal = eiwitValue / eiwitGoal;
+    const currGroeteGoal = groenteValue / groenteGoal;
+
+    const width = (currKcalGoal + currEiwitGoal + currGroeteGoal) / 3;
+    progress.style.width = width * 100 + '%';
+}
+
