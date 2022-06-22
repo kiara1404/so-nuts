@@ -108,12 +108,12 @@ function bewegingProgressBar() {
 
 function voedingProgressBar() {
     let progress = document.querySelector('.dashboard .container:nth-of-type(2) .progressBar')
-    const kcalValue = document.querySelector('.kcal_value').innerHTML;
-    const eiwitValue = document.querySelector('.eiwit_value').innerHTML;
-    const groenteValue = document.querySelector('.groente_value').innerHTML;
-    const kcalGoal = document.querySelector('.kcal_goal').innerHTML;
-    const eiwitGoal = document.querySelector('.eiwit_goal').innerHTML;
-    const groenteGoal = document.querySelector('.groente_goal').innerHTML;
+    const kcalValue = document.querySelector('#kcal_value').innerHTML;
+    const eiwitValue = document.querySelector('#eiwit_value').innerHTML;
+    const groenteValue = document.querySelector('#groente_value').innerHTML;
+    const kcalGoal = document.querySelector('#kcal_goal').innerHTML;
+    const eiwitGoal = document.querySelector('#eiwit_goal').innerHTML;
+    const groenteGoal = document.querySelector('#groente_goal').innerHTML;
     const currKcalGoal = kcalValue / kcalGoal;
     const currEiwitGoal = eiwitValue / eiwitGoal;
     const currGroeteGoal = groenteValue / groenteGoal;

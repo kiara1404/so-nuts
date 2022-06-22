@@ -48,19 +48,19 @@
         </div>
         <article>
             <%   if(kcalData) { %>
-            <p><span class="kcal_value"><%= kcalData %></span>/ <span class="kcal_goal">2000</span> calorieën</p>
+            <p><span id="kcal_value"><%= kcalData %></span>/ <span id="kcal_goal">2000</span> calorieën</p>
             <% } else { %>
             <p><span>0</span>/2000</p>
             <% } %>
 
             <%   if(eiwitData) { %>
-            <p><span class="eiwit_value"><%= eiwitData %></span>/ <span class="eiwit_goal">60</span> gram</p>
+            <p><span id="eiwit_value"><%= eiwitData %></span>/ <span id="eiwit_goal">60</span> gram</p>
             <% } else { %>
             <p><span>0</span>/60</p>
             <% } %>
 
             <%   if(groenteData) { %>
-            <p><span class="groente_value"><%= groenteData %></span>/ <span class="groente_goal">200</span> gram</p>
+            <p><span id="groente_value"><%= groenteData %></span>/ <span id="groente_goal">200</span> gram</p>
             <% } else { %>
             <p><span>0</span>/200</p>
             <% } %>

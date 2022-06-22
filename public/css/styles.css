@@ -370,8 +370,8 @@ input[type="submit"]{
 }
 .container:nth-of-type(1) div p{
     margin-top: 1rem;
-    margin-left: 0.5rem;
-    width: 70%;
+    margin-left: 1rem;
+    width: 80%;
     font-size: 1.5rem;
 
 }
@@ -380,9 +380,9 @@ input[type="submit"]{
 
     }
 .container:nth-of-type(1) ul{
-    width: 50%;
+    width: 40%;
     list-style-type: none;
-    margin: 1rem 2rem 0 4rem;
+    margin: 1rem 1rem 0 1rem;
 }
 .container:nth-of-type(2){
     height: 9rem;
@@ -410,6 +410,10 @@ input[type="submit"]{
 .dashboard .container:last-of-type article i{
    margin: 2rem 1rem 1rem 1rem;
    font-size: 2rem;
+}
+
+.dashboard #kcal_goal, #eiwit_goal, #groente_goal{
+    font-size: 1.1rem;
 }
 
 /* training*/
