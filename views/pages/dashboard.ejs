@@ -23,12 +23,14 @@
             <div class="progressBar"></div>
         </div>
         <div>
+            <% let totalMin = cardioData + krachtData %>
+            <% if(cardioData && krachtData) { %>
             <p>
                 <span>
-                    <% var totalMin = data.minTraining %>
-                    <%= totalMin %>
+                   <%= totalMin %>
                 </span>/week
             </p>
+            <% } %>
             <ul>
                 <li>vandaag: 0</li>
                 <li>doel: 150</li>

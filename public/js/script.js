@@ -5,6 +5,9 @@ const nextBtn = document.querySelector('.btn-next');
 const submitBtn = document.querySelector('#form-submit');
 const fieldset = document.querySelectorAll('#form fieldset')
 const progress = document.querySelector('#form .progressBar');
+const training = document.querySelector('.training')
+const trainingBtns = document.querySelector('.buttons')
+const addTrainingBtn = document.querySelector('#add-training-btn')
 let i = 1
 
 
@@ -19,6 +22,8 @@ function deleteClass(element, className) {
     element.classList.remove(className);
 }
 console.log(fieldset.length)
+
+
 // FORM
 // when JS is enabled
 if (form) {
@@ -65,3 +70,25 @@ if (form) {
 }
 // END FORM
 
+if (training) {
+    addClass(trainingBtns, 'hide')
+    addTrainingBtn.addEventListener('click', () => {
+        deleteClass(trainingBtns, 'hide')
+    })
+}
+// add training
+// function addValues(a,b){
+
+
+// }
+
+// let a = 12
+
+// localStorage.setItem('data', a);
+// document.querySelector('.krachtValue').innerHTML = a + ':00'
+
+
+// console.log(localStorage.getItem('data'))
+
+// localStorage.setItem('data', localStorage.getItem('data') + a);
+// console.log(typeof (localStorage.getItem('data')))

@@ -1,6 +1,7 @@
 import express from 'express';
 import * as fs from 'fs';
 import fetch from 'node-fetch'
+import async from 'async'
 
 const app = express();
 const port = process.env.PORT || 2000
@@ -22,29 +23,42 @@ app.get('/', (req, res) => {
 })
 app.get('/form_1', getData)
 app.get('/dashboard', (req, res) => {
-    fs.readFile('public/json/addTraining.json', 'utf8', function (err, data) {
-        if (err) throw err;
-        let formData;
-        if (data) {
-            formData = JSON.parse(data)
-            console.log(formData)
+    const files = ['public/json/cardio.json', 'public/json/kracht.json'];
+    async.map(files, fs.readFile, function (err, data) {
+        let stringDataCardio = JSON.parse(data[0])
+        let stringDataKracht = JSON.parse(data[1])
+        let krachtData = parseInt(stringDataKracht.minTraining)
+        let cardioData = parseInt(stringDataCardio.minTraining)
+        console.log(cardioData)
+        console.log(krachtData)
 
-        }
-        res.render('pages/dashboard', { data: formData })
+        res.render('pages/dashboard', {
+            cardioData: cardioData,
+            krachtData: krachtData,
+            cardioType: stringDataCardio
+        });
     })
 });
 
 app.get('/training', (req, res) => {
-    fs.readFile('public/json/addTraining.json', 'utf8', function (err, data) {
-        if (err) throw err;
-        let formData;
-        if (data) {
-            formData = JSON.parse(data)
-            console.log(formData)
-        }
-        res.render('pages/training', { data: formData })
-    });
-});
+    const files = ['public/json/cardio.json', 'public/json/kracht.json'];
+    async.map(files, fs.readFile, function (err, data) {
+        let stringDataCardio = JSON.parse(data[0])
+        let stringDataKracht = JSON.parse(data[1])
+        let krachtData = parseInt(stringDataKracht.minTraining)
+        let cardioData = parseInt(stringDataCardio.minTraining)
+        console.log(cardioData)
+        console.log(krachtData)
+
+        res.render('pages/training', {
+            cardioData: cardioData,
+            krachtData: krachtData,
+            cardioType: stringDataCardio
+        })
+    })
+
+})
+
 app.get('/voeding', (req, res) => {
     res.render('pages/voeding')
 });
@@ -66,14 +80,59 @@ app.get('/results', (req, res) => {
 app.get('/add_training', (req, res) => {
     res.render('pages/add_training')
 });
+app.get('/form_cardio', (req, res) => {
+    res.render('pages/form_cardio')
+});
+app.get('/form_kracht', (req, res) => {
+    res.render('pages/form_kracht')
+});
 
 // POST
 app.post('/form_1', getData);
-app.post('/dashboard', postAddTraining);
+app.post('/added_cardio', (req, res) => {
+    let cardioStringData;
+    const cardioData = {
+        "trainingType": req.body.cardio_type,
+        "minTraining": req.body.cardio_duration
+    }
+    cardioStringData = JSON.stringify(cardioData);
+
+
+    fs.writeFile('public/json/cardio.json', cardioStringData, (err, data) => {
+        if (data) {
+            cardioStringData = JSON.parse(data)
+        }
+        if (err) {
+            console.log(err)
+        }
+    });
+
+    res.redirect('training')
+
+})
+
 app.post('/results', (req, res) => {
     res.render('pages/results')
 });
-app.post('/training', postAddTraining)
+app.post('/added_kracht', (req, res) => {
+    let krachtStringData;
+    const krachtData = {
+        "minTraining": req.body.kracht_duration
+    }
+    krachtStringData = JSON.stringify(krachtData);
+    console.log(krachtData);
+
+
+    fs.writeFile('public/json/kracht.json', krachtStringData, (err, data) => {
+        if (data) {
+            krachtStringData = JSON.parse(data)
+        }
+        if (err) {
+            console.log(err)
+        }
+    });
+    res.redirect('training')
+})
 
 
 // server
@@ -103,75 +162,5 @@ async function getData(req, res) {
         console.log(err)
 
     }
-}
-
-
-
-let auth;
-function request(method = "GET", credentials) {
-    return async function (url, body) {
-        if (!auth && credentials) {
-            auth = fetch('https://sonuts.chippr.dev/api/Token', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ email: 'participant@local' })
-
-            }).then(res => res.json())
-        }
-        return fetch(url, {
-            method,
-            body,
-            headers: { "Authorization": `${auth.tokenType} ${auth.accessToken}` }
-        })
-
-    }
-}
-
-const get = request("GET", { email: "participant@local" });
-const post = request("POST", { email: "participant@local" });
-const put = request("PUT", { email: "participant@local" });
-const patch = request("PATCH", { email: "participant@local" });
-const del = request("DELETE", { email: "participant@local" });
-
-// Voorbeeld categorie ophalen
-get("https://sonuts.chippr.dev/api/categories");
-
-// Voorbeeld antwoord posten
-post("https://sonuts.chippr.dev/api/questionnaireresponses", {
-    "questionnaireId": "7b917bc1-26ed-4b20-a1d8-015460e1546b",
-    "responses": [
-        {
-            "questionId": "127c16aa-83fe-43a3-9ff6-cf39359fc31d",
-            "answer": "test :)"
-        }
-    ]
-})
-
-
-
-
-function postAddTraining(req, res) {
-    let stringData;
-    const data = {
-        "trainingType": req.body.trainingType,
-        "nameTraining": req.body.nameTraining,
-        "minTraining": req.body.minTraining
-    }
-    stringData = JSON.stringify(data);
-    console.log(data);
-
-
-    fs.writeFile('public/json/addTraining.json', stringData, (err, data) => {
-        if (data) {
-            stringData = JSON.parse(data)
-        }
-        if (err) {
-            console.log(err)
-        }
-    });
-    res.render('pages/training')
 }
 

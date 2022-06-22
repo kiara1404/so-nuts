@@ -1,21 +1,13 @@
 <%- include('../partials/head.ejs') %>
-<main class="training">
+<main class="add_training">
     <h2>Beweging</h2>
-
-    <form action="/training" id="trainingForm" method="POST">
-        <h3>Wat voor soort training heeft u gedaan?</h3>
-        <input type="radio" name="trainingType" id="kracht" value="kracht">
-        <label for="kracht">Krachttraining</label>
-        <input type="radio" name="trainingType" id="cardio" value="cardio">
-        <label for="kracht">Cardio</label>
-
-        <label for="nameTraining">Wat heeft u gedaan? </label>
-        <input type="text" name="nameTraining" id="nameTraining" placeholder="wandelen">
-        <label for="minTraining">Hoelang was uw training?</label>
-        <input type="number" name="minTraining">
-        <button type="submit">Toevoegen</button>
-    </form>
-
+    <h3>Wat voor soort activiteit wil u toevoegen?</h3>
+    <div>
+        <button id="cardio">Cardio</button>
+        <button id="kracht">Kracht</button>
+    </div>
+    <%- include('../partials/form_cardio.ejs') %>
+    <%- include('../partials/form_kracht.ejs') %>
     <%- include('../partials/nav.ejs') %>
 </main>
 

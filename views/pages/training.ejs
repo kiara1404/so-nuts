@@ -12,10 +12,16 @@
         <section>
             <h3>Wekelijkse actieve minuten</h3>
         </section>
+        <% let totalMin = cardioData + krachtData %>
+        <% if(cardioData && krachtData) { %>
         <p><span id="totalMin">
-                <% var totalMin = data.minTraining %>
                 <%= totalMin %>
             </span>/150</p>
+            <% } else { %>
+                <p><span id="totalMin">
+                        0
+                    </span>/150</p>
+                    <% } %>
     </div>
     <div class="wrapper">
 
@@ -23,9 +29,9 @@
             <section>
                 <h3>Cardio</h3>
             </section>
-            <% var totalMin = data.minTraining %>
-            <%if(data && data.trainingType == 'cardio') { %>
-            <p><span class="cardioValue"><%= data.minTraining %>:00 </span> minuten</p>
+
+            <%   if(cardioData) { %>
+            <p><span class="cardioValue"><%= cardioData %>:00 </span> minuten</p>
             <% } else { %>
             <p><span class="cardioValue">0:00 </span> minuten</p>
             <% } %>
@@ -35,10 +41,10 @@
             <section>
                 <h3>Kracht</h3>
             </section>
-            <%if(data && data.trainingType == 'kracht') { %>
-            <p><span class="krachtValue"><%= data.minTraining %>:00 </span> minuten</p>
+            <%   if(krachtData) { %>
+            <p><span class="cardioValue"><%= krachtData %>:00 </span> minuten</p>
             <% } else { %>
-            <p><span class="krachtValue">0:00 </span> minuten</p>
+            <p><span class="cardioValue">0:00 </span> minuten</p>
             <% } %>
 
         </div>
@@ -49,7 +55,14 @@
             <p><span>4300</span>/10000</p>
         </div>
     </div>
-    <a class="btn-secondary" id="add-training-btn" href="/add_training">Voeg gegevens toe</a>
+    <button class="btn-secondary" id="add-training-btn">Voeg gegevens toe</button>
+    <div class="btn_wrapper">
+        <div class="buttons">
+            <a href="/form_cardio" id="cardio">Cardio</a>
+            <a href="/form_kracht" id="kracht">Kracht</a>
+        </div>
+    </div>
+
 
     <%- include('../partials/nav.ejs') %>
 </main>

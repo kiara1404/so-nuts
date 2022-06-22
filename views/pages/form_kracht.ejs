@@ -1,0 +1,15 @@
+<%- include('../partials/head.ejs') %>
+<main class="add_training">
+    <h2>Krachttraining</h2>
+    <form method="POST" action="/added_kracht" class="hide_form">
+
+        <label for="cardio_type">Hoelang was uw training in minuten?</label>
+        <input type="number" name="kracht_duration" id="kracht_duration" placeholder="25">
+        <button type="submit">Toevoegen</button>
+
+    </form>
+    <%- include('../partials/nav.ejs') %>
+</main>
+
+
+<%- include('../partials/footer.ejs') %>

@@ -18,11 +18,13 @@
   },
   "homepage": "https://github.com/kiara1404/so-nuts#readme",
   "dependencies": {
+    "async": "^3.2.4",
     "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "fs": "^0.0.1-security",
     "node-fetch": "^3.2.4",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "package-merge": "^0.1.2"
   }
 }

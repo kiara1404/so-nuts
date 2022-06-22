@@ -7,7 +7,7 @@
 --lighter-green: #91CFAD;
 --darker-green: #589661;
 --grey-green: #8bbd69;
---dark-grey: #4b4949;
+--dark-grey: #363636;
 --blue: #3470be;
 
 }
@@ -16,11 +16,11 @@
 margin: 0;
 padding: 0;
 box-sizing: border-box;
+font-family: 'Raleway', sans-serif;
 
 }
 body{
 font-size: 18px;
-font-family: 'Raleway', sans-serif;
 color: #fff;
 background-color: #3d3d3d;
 
@@ -135,9 +135,10 @@ input{
     margin-bottom: 1.5em;
 }
 
-input[type="text"]::placeholder{
+input[type="text"]::placeholder, input[type="number"]::placeholder{
     padding: 0.3rem;
     font-style: italic;
+    font-size: 1.2em;
 }
 .form-btn{
     width: 80vw;
@@ -416,15 +417,35 @@ input[type="submit"]{
     width: 95vw;
     justify-content: space-evenly;
 }
-#cardioBtn, #krachtBtn {
-    width: 40%;
+.training .btn_wrapper{
+    width: 95vw;
+    display: block;
+    margin: 0 auto;
+}
+
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+
+}
+#kracht, #cardio {
+    width: 45%;
     padding: 20px;
     font-size: 18px;
-    background-color: var(--light-purple);
+    background-color: #d1b9ec;
     border-radius: 5px;
     border: none;
+    font-family: 'Raleway', sans-serif;
+    color: var(--dark-grey);
+    font-size: 18px;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+
 }
-.training .nav{
+.training .nav, .add_training .nav{
 background-color: var(--main-purple)
 }
 .training > div:first-of-type, .voeding > div:first-of-type{
@@ -462,12 +483,19 @@ background-color: var(--main-purple)
     text-decoration: none;
 }
 
+
 .training .btn-secondary:hover{
-    background-color: #91CFAD;
+    background-color:var(--main-purple);
+    color: var(--dark-grey);
 }
 
-.training h2{
+.training h2, .add_training h2{
     color: var(--main-purple);
+}
+.add_training h3{
+    width: 90vw;
+    margin: 0 auto;
+    padding: 0.2em;
 }
 
 .training .container-s:nth-child(1) section{
@@ -497,6 +525,10 @@ background-color: var(--main-purple)
 .training .container-s:nth-child(1) p span, .training .container-s:nth-child(2) p span{
     display: block;
     font-size: 2rem;
+}
+.training .container{
+    margin: 2rem auto -2rem;
+    height: 6rem;
 }
 
 
@@ -530,6 +562,18 @@ background-color: var(--main-purple)
     width: 100%;
     margin: 0 auto;
     list-style: none;
+    border-radius: 10px;
+}
+
+.add_training form button[type="submit"]{
+    display: block;
+    background-color: var(--main-purple);
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    color: var(--dark-grey);
+    border: none;
+    font-weight: 600;
     border-radius: 10px;
 }
 
@@ -568,10 +612,6 @@ background-color: var(--main-purple)
     width: 90%;
     text-align: center;
 
-}
-.training .container{
-    margin: 2rem auto -2rem;
-    height: 6rem;
 }
 
 
