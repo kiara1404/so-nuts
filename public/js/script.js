@@ -14,6 +14,7 @@ let i = 1
 
 
 
+
 // adds class to element
 function addClass(element, className) {
     element.classList.add(className);
@@ -88,26 +89,7 @@ if (voeding) {
 }
 
 if (dashboard) {
-    voedingProgressBar();
-    bewegingProgressBar();
-
-
-}
-
-function bewegingProgressBar() {
-    let progress = document.querySelector('.dashboard .container:nth-of-type(1) .progressBar')
-    const value = document.querySelector('#beweging_value').innerHTML;
-    const goal = document.querySelector('#beweging_goal').innerHTML;
-    const currGoal = value / goal;
-    const width = currGoal * 100 + '%';
-    progress.style.width = width;
-
-
-
-}
-
-function voedingProgressBar() {
-    let progress = document.querySelector('.dashboard .container:nth-of-type(2) .progressBar')
+    let progress;
     const kcalValue = document.querySelector('#kcal_value').innerHTML;
     const eiwitValue = document.querySelector('#eiwit_value').innerHTML;
     const groenteValue = document.querySelector('#groente_value').innerHTML;
@@ -117,8 +99,39 @@ function voedingProgressBar() {
     const currKcalGoal = kcalValue / kcalGoal;
     const currEiwitGoal = eiwitValue / eiwitGoal;
     const currGroeteGoal = groenteValue / groenteGoal;
+    const voedselAverage = (currKcalGoal + currEiwitGoal + currGroeteGoal) / 3 * 100;
 
-    const width = (currKcalGoal + currEiwitGoal + currGroeteGoal) / 3;
-    progress.style.width = width * 100 + '%';
+    voedingProgressBar();
+    bewegingProgressBar();
+    goalAchieved(1, document.querySelector('#beweging_value').innerHTML);
+    goalAchieved(2, (voedselAverage))
+
+
+
+
+
+
+
+function bewegingProgressBar() {
+    let progress = document.querySelector('.dashboard .container:nth-of-type(1) .progressBar')
+    const value = document.querySelector('#beweging_value').innerHTML;
+    const goal = document.querySelector('#beweging_goal').innerHTML;
+    const currGoal = value / goal;
+    const width = currGoal * 100 + '%';
+    progress.style.width = width;
 }
 
+function goalAchieved(x, value) {
+    const checkmark = document.querySelector(`.container:nth-of-type(${x}) .checkmark i`);
+    console.log(value)
+    if (value >= 100) {
+        addClass(checkmark, 'goal_achieved');
+    }
+}
+
+function voedingProgressBar() {
+    progress = document.querySelector('.dashboard .container:nth-of-type(2) .progressBar');
+    progress.style.width = voedselAverage + '%';
+}
+
+}
