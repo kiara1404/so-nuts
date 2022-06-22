@@ -28,7 +28,7 @@ app.get('/form_1', getData)
 //dashboard
 app.get('/dashboard', (req, res) => {
     const files = ['public/json/cardio.json', 'public/json/kracht.json', 'public/json/kcal.json', 'public/json/eiwitten.json', 'public/json/groente.json'];
-   // got this function from stackOverflow: https://stackoverflow.com/questions/58424336/reading-multiple-files-asynchronously-in-node-js
+    // got this function from stackOverflow: https://stackoverflow.com/questions/58424336/reading-multiple-files-asynchronously-in-node-js
     async.map(files, fs.readFile, function (err, data) {
         let stringDataCardio = JSON.parse(data[0])
         let stringDataKracht = JSON.parse(data[1])
@@ -54,8 +54,24 @@ app.get('/dashboard', (req, res) => {
         });
     })
 });
+app.get('/training_cardio', (req, res) => {
+    fs.readFile('public/json/cardio.json', 'utf8', function (err, data) {
+        if (err) throw err;
+        let formData;
+        if (data) {
+            formData = JSON.parse(data)
+            console.log(formData)
+        }
+        res.render('pages/training_cardio', {
+            minTraining: formData.minTraining,
+            trainingType: formData.trainingType
+        })
+    });
+});
 
-
+app.get('/progressie', (req, res) => {
+    res.render('pages/progressie')
+});
 // training page
 app.get('/training', (req, res) => {
     const files = ['public/json/cardio.json', 'public/json/kracht.json'];

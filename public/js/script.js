@@ -71,6 +71,7 @@ if (form) {
 }
 // END FORM
 
+// if this page is visible
 if (trainingPage) {
     const currTrainingGoal = document.querySelector('#total_goal').innerHTML;
     const currTrainingVal = document.querySelector('#total_min').innerHTML;
@@ -83,6 +84,7 @@ if (trainingPage) {
     })
 }
 
+// if this page is visible
 if (voedingPage) {
     const kcalValue = document.querySelector('.kcal_value').innerHTML;
     const eiwitValue = document.querySelector('.eiwit_value').innerHTML;
@@ -120,8 +122,6 @@ if (dashboardPage) {
     const currEiwitGoal = eiwitValue / eiwitGoal;
     const currGroenteGoal = groenteValue / groenteGoal;
     const voedselAverage = (currKcalGoal + currEiwitGoal + currGroenteGoal) / 3 * 100;
-
-
 
     voedingProgressBar();
     bewegingProgressBar();

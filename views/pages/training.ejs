@@ -9,6 +9,7 @@
     </div>
 
     <div class="container">
+       
         <section>
             <h3>Wekelijkse actieve minuten</h3>
         </section>
@@ -23,10 +24,11 @@
             </span>/<span id="total_goal">150</span></p>
         <% } %>
         <%- include('../partials/checkmark.ejs') %>
+        
     </div>
     <div class="wrapper">
-
         <div class="container-s">
+            <a href="/training_cardio">
             <section>
                 <h3>Cardio</h3>
             </section>
@@ -39,6 +41,7 @@
             <%   if(cardioType) { %>
             <p id="type_training"><%= cardioType %></p>
             <% } %>
+            </a>
         </div>
 
         <div class="container-s">
