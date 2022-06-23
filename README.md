@@ -1,10 +1,6 @@
 # So Nuts
-<<<<<<< HEAD
 _Deze opdracht is gemaakt voor SO-NUTS  voor de Meesterproef dat gegeven wordt tijdens de minor Webdesign & Webdevelopment aan de Hogeschool van Amsterdam_
-<img src="screens.png" width="800px alt="screenshots">
-=======
 <img src="screens.png" width="800px" alt="screenshots">
->>>>>>> 1709bca0610efd15e3e9f7f4edc8cfc1aa0f82ed
 
 ##  🌐 Live Demo
 De live demo is [hier](https://cmd-so-nuts.herokuapp.com/) te bekijken.
