@@ -208,7 +208,34 @@ app.post('/added_kracht', (req, res) => {
     });
     res.redirect('training')
 })
+app.post('/dashboard', (req, res) => {
+    const files = ['public/json/cardio.json', 'public/json/kracht.json', 'public/json/kcal.json', 'public/json/eiwitten.json', 'public/json/groente.json'];
+    // got this function from stackOverflow: https://stackoverflow.com/questions/58424336/reading-multiple-files-asynchronously-in-node-js
+    async.map(files, fs.readFile, function (err, data) {
+        let stringDataCardio = JSON.parse(data[0])
+        let stringDataKracht = JSON.parse(data[1])
+        let stringDataKcal = JSON.parse(data[2]);
+        let stringDataEiwitten = JSON.parse(data[3]);
+        let stringDataGroente = JSON.parse(data[4]);
 
+        let kcalData = parseInt(stringDataKcal.kcal);
+        let eiwitData = parseInt(stringDataEiwitten.eiwitten);
+        let groenteData = parseInt(stringDataGroente.groente);
+        let krachtData = parseInt(stringDataKracht.minTraining)
+        let cardioData = parseInt(stringDataCardio.minTraining)
+        console.log(cardioData)
+        console.log(krachtData)
+
+        res.render('pages/dashboard', {
+            cardioData: cardioData,
+            krachtData: krachtData,
+            cardioType: stringDataCardio,
+            kcalData: kcalData,
+            eiwitData: eiwitData,
+            groenteData: groenteData
+        });
+    })
+});
 app.post('/added_groente', (req, res) => {
     let stringData;
     const data = {
@@ -271,7 +298,9 @@ app.post('/added_kcal', (req, res) => {
 
 
 
-
+app.use((req, res) => {
+    res.status(404).render('pages/404')
+})
 // server
 app.listen(port, () =>
     console.log(`Server is running succesfully👋!`),

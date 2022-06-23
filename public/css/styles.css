@@ -255,7 +255,7 @@ input[type="submit"]{
     margin-bottom: 2rem;
 }
 
-.dashboard .nav div:first-child i, .voeding .nav div:nth-child(3) i, .training .nav div:nth-child(2) i{
+.dashboard .nav div:first-child i, .voeding .nav div:nth-child(3) i, .progressie .nav div:nth-child(4) i{
     color: #fff;
     opacity: 1;
 }
@@ -873,8 +873,6 @@ background-color: var(--main-purple)
    display: block;
 }
 
-
-
 .overflow{
     overflow: hidden;
 }
@@ -901,4 +899,115 @@ background-color: var(--main-purple)
 
 .progressie h2{
     color: #3470be;
+}
+.progressie header {
+    width: 90vw;
+    height: 13vh;
+    margin: 0 auto;
+
+}
+.progressie h3{
+    width: 90vw;
+    font-size: 1.5rem;
+    margin: 0 auto;
+    font-weight: 600;
+}
+
+.progressie .wrapper .container {
+    width: 90vw;
+    flex: 0 0 auto;
+    height: 10rem;
+    margin: 0 0 0 1rem;
+}
+
+.progressie .wrapper{
+    width: 100vw;
+    height: 25vh;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+.progressie .wrapper .container section{
+    width: 100%;
+    height: 2.4rem;
+    background-color: var(--blue);
+}
+
+.progressie .btn-secondary{
+        display: block;
+    width: 90vw;
+    margin: 1rem auto;
+    border-radius: 10px;
+    border: 2px solid var(--blue);
+    font-size: 18px;
+    color: var(--blue);
+    background-color: transparent;
+    font-weight: 600;
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none;
+}
+.progressie .wrapper .container section i {
+    margin: 1.2rem 0 0 0.8rem ;
+    font-size: 1.4rem;
+}
+
+.progressie .wrapper .container section h3{
+    padding: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.progressie header .container{
+    height: 5rem;
+    overflow: hidden;
+}
+.progressie .wrapper .container p{
+    width: 85%;
+    padding: 0.3rem;
+    margin: 0.6rem auto 0;
+}
+
+.progressie .wrapper .container ul{
+    width: 85%;
+    margin: 0 auto;
+
+}
+.progressie  header .container div{
+    display: flex;
+}
+.progressie header .container div i:first-of-type {
+    font-size: 2.2rem;
+    margin: 2rem 1rem;
+}
+
+.progressie header .container div p{
+    margin: 0.8rem 1rem 1.3rem;
+    font-size: 1.1rem !important; 
+}
+/* error */
+.error_page{
+    width: 100vw;
+    overflow: hidden;
+}
+.error_page p {
+    width: 90vw;
+    margin: 0 auto;
+    
+}
+.error_page a {
+    font-weight: 800;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+.error_page h3{
+    font-size: 12rem;
+    font-weight: 900;
+    opacity: 0.2;
+    display: block;
+    width: 90vw;
+    margin: 1rem auto;
+
 }
