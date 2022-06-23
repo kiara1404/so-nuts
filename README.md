@@ -1,6 +1,5 @@
 # So Nuts
-
-![So Nuts](https://www.hva.nl/binaries/threecolumnlandscape/content/gallery/subsites/urban-vitality/nieuws/go-nuts/gepensioneerde-man-etend-op-bank.jpeg)
+<img src="screens.png" width="800px alt="screenshots">
 
 ## Inhoudsopgave
   * [Debrief](#debrief)
