@@ -934,7 +934,29 @@ background-color: var(--main-purple)
     height: 2.4rem;
     background-color: var(--blue);
 }
+.doelen{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+.doelen .container {
+    height: 4.5rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+}
 
+.doelen .container i{
+    margin: 2rem 0.7rem;
+}
+ .doelen .container p{
+     margin: 1rem 0;
+ }
+ .doelen .checkmark i{
+     margin: 2.5rem 0.2rem 0 0.4rem;
+    font-size: 1.5rem;
+    color: rgb(75, 75, 75);
+    padding: 0.2rem;
+
+ }
 .progressie .btn-secondary{
         display: block;
     width: 90vw;
