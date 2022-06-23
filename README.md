@@ -1,13 +1,37 @@
 # So Nuts
+_Deze opdracht is gemaakt voor SO-NUTS  voor de Meesterproef dat gegeven wordt tijdens de minor Webdesign & Webdevelopment aan de Hogeschool van Amsterdam_
 <img src="screens.png" width="800px alt="screenshots">
 
+##  🌐 Live Demo
+De live demo is [hier](https://cmd-so-nuts.herokuapp.com/) te bekijken.
 ## Inhoudsopgave
+  * [Installatie](#installatie)
   * [Debrief](#debrief)
   * [Opdrachtgever](#opdrachtgever)
   * [Design challenge](#design-challege)
   * [Data](#data)
   * [Licentie](#licentie)
 
+## Installatie
+#### This project is made with
+* Node.js
+* Express
+* EJS
+
+#### Clone the repository
+```
+git clone https://github.com/kiara1404/so-nuts
+```
+
+#### Installeer alle packages
+```
+npm install
+```
+
+#### Start de applicatie lokaal
+```
+nodemon run dev
+```
 ## Debrief
 #### Aanleiding
 Ouder worden heeft gevolgen op mensen hun leefstijl. Onder andere hun eet- en beweeggewoonten veranderen. Soms kan dit betekenen dat mensen extra gewicht krijgen, met name in vetmassa, terwijl de spiermassa juist afneemt. Er zijn al oplossingen om mensen op een aantrekkelijke, gepersonaliseerde en goedkope manier hulp te bieden. Toch ontbreekt het aan effectieve, duurzame eet- en beweeginterventies gericht op onze specifieke doelgroep: 55-plussers.
@@ -23,12 +47,11 @@ Wanneer mensen ouder worden gaan verandert er veel in hun leven. Zo ook het eetp
 
 Helaas ontbreekt het aan effectieve, duurzame eet-en beweeginterventies voor mensen die ouder worden. Het is aan ons om ervoor te zorgen dat er een digitale tool komt die 55-plussers stimuleren om meer te bewegen en een meer bewust voedingspatroon in hun leven te implementeren zodat sarcopenie, obesitas en sarcopene obesitas voorkomen kunnen worden.
 
-
-## Data
-Relevante data is via een API te ontsluiten.
+## Wishlist
 
 ## Licentie
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 This work is licensed under [GNU GPLv3](./LICENSE).
+
