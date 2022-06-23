@@ -1,5 +1,5 @@
 # So Nuts
-<img src="screens.png" width="800px alt="screenshots">
+<img src="screens.png" width="800px" alt="screenshots">
 
 ## Inhoudsopgave
   * [Debrief](#debrief)
