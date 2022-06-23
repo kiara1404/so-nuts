@@ -23,7 +23,6 @@ body{
 font-size: 18px;
 color: #fff;
 background-color: #3d3d3d;
-
 }
 
 i {
@@ -109,6 +108,12 @@ form fieldset{
     border: none;
 
 }
+
+form span{
+    display: block;
+    font-style: italic;
+    font-size: 16px;
+}
 legend h3{
     font-weight: 600;
     font-size: 1.5rem;
@@ -157,7 +162,7 @@ input[type="text"]::placeholder, input[type="number"]::placeholder{
 
 }
 
-#form-submit{
+.form-submit{
     
     background-color: var(--blue);
     height: 35px;
