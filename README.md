@@ -5,10 +5,12 @@ _Deze opdracht is gemaakt voor SO-NUTS  voor de Meesterproef dat gegeven wordt t
 ##  🌐 Live Demo
 De live demo is [hier](https://cmd-so-nuts.herokuapp.com/) te bekijken.
 ## Inhoudsopgave
-  * [Installatie]()
-  * [Design challenge]()
-  * [Data]()
-  * [Licentie]()
+  * [Installatie](#installatie)
+  * [Design challenge](#design-challenge)
+  * [Data](#api)
+  * [Documentatie](#documentatie)
+  * [Wishlist](#wishlist)
+  * [Licentie](#licentie)
 
 ## Installatie
 #### This project is made with
