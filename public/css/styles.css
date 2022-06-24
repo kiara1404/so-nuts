@@ -260,7 +260,7 @@ input[type="submit"]{
     margin-bottom: 2rem;
 }
 
-.dashboard .nav div:first-child i, .voeding .nav div:nth-child(3) i,.training .nav div:nth-child(2) .progressie .nav div:nth-child(4) i{
+.dashboard .nav div:first-child i, .voeding .nav div:nth-child(3) i,.training .nav div:nth-child(2) i, .progressie .nav div:nth-child(4) i{
     color: #fff;
     opacity: 1;
 }

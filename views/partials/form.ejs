@@ -8,7 +8,7 @@
         <p>Om te beginnen met SO NUTS, is het nodig om een aantal vragen te beantwoorden zodat wij gepaste hulp kunnen
             aanbieden.</p>
         <label for="name">Naam</label>
-        <input type="text" name="name" placeholder="Uw naam hier">
+        <input type="text" name="name" placeholder="Uw naam hier" id="name">
     </fieldset>
     <!-- persoonsgegevens-->
     <fieldset id="form_personal">
@@ -74,7 +74,7 @@
             <h3><%- personal.description%></h3>
         </legend>
         <label for="<%- personal.questions[13].id %>"><%- personal.questions[13].text %></label>
-        <input type="number" name="<%- personal.questions[13].id %>">
+        <input type="number" name="<%- personal.questions[13].id %>" placeholder="56">
 
         <label for="<%- personal.questions[11].id %>"><%- personal.questions[11].text %></label>
 
@@ -88,11 +88,11 @@
 
         <label for="<%- personal.questions[9].id %>"><%- personal.questions[9].text %>
             <span><%- personal.questions[9].description %></span></label>
-        <input type="number" name="<%- personal.questions[9].id %>">
+        <input type="number" name="<%- personal.questions[9].id %>" placeholder="87">
 
         <label for="<%- personal.questions[5].id %>"><%- personal.questions[5].text %>
             <span><%- personal.questions[5].description %></span></label>
-        <input type="number" name="<%- personal.questions[5].id %>">
+        <input type="number" name="<%- personal.questions[5].id %>" placeholder="185">
 
     </fieldset>
 
@@ -102,7 +102,7 @@
             <h3><%- beweging.description %></h3>
         </legend>
         <label for="<%- beweging.questions[0].id %>"><%- beweging.questions[0].text %></label>
-        <input type="number" id="<%- beweging.questions[0].id %>">
+        <input type="number" id="<%- beweging.questions[0].id %>" placeholder="24">
 
         <label for="<%- beweging.questions[1].id %>"><%- beweging.questions[1].text %></label>
         <% for(let i = 0; i < beweging.questions[1].answerOptions.length; i++) { %>
@@ -114,10 +114,10 @@
         <% } %>
 
         <label for="<%- beweging.questions[2].id %>"><%- beweging.questions[2].text %></label>
-        <input type="number" id="<%- beweging.questions[2].id %>">
+        <input type="number" id="<%- beweging.questions[2].id %>" placeholder="12">
 
         <label for="<%- beweging.questions[3].id %>"><%- beweging.questions[3].text %></label>
-        <input type="number" id="<%- beweging.questions[3].id %>">
+        <input type="number" id="<%- beweging.questions[3].id %>" placeholder="4">
     </fieldset>
 
 
@@ -132,10 +132,10 @@
             <option value="<%- voeding.questions[0].text %>" id="<%- voeding.questions[0].answerOptions[i].id %>">
                 <%- voeding.questions[0].answerOptions[i].text %>
             </option>
-            
+
             <% } %>
-      </select>
-           
+        </select>
+
     </fieldset>
 
 
